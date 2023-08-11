@@ -1,0 +1,2 @@
+* * * * * php /app/artisan schedule:run >> /dev/stdout 2>&1
+# An empty line
