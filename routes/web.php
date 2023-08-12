@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'App\Http\Controllers\admin'], function() {
+    Route::get('/admin/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
+});
