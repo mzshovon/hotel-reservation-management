@@ -4065,3 +4065,464 @@
 2023/08/14 14:21:50 [crit] 32#32: *114 stat() "/app/public/img/bg-img/1.jpg" failed (13: Permission denied), client: 172.25.0.1, server: _, request: "GET /img/bg-img/1.jpg HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
 2023/08/14 14:21:50 [crit] 32#32: *114 stat() "/app/public/img/core-img/favicon.png" failed (13: Permission denied), client: 172.25.0.1, server: _, request: "GET /img/core-img/favicon.png HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
 2023/08/14 14:21:50 [crit] 32#32: *114 stat() "/app/public/img/core-img/favicon.png" failed (13: Permission denied), client: 172.25.0.1, server: _, request: "GET /img/core-img/favicon.png HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:44:03 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:44:03 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:44:03 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:44:03 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:44:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:44:03 [notice] 1#1: start worker processes
+2023/08/14 14:44:03 [notice] 1#1: start worker process 32
+2023/08/14 14:44:03 [notice] 1#1: start worker process 33
+2023/08/14 14:44:03 [notice] 1#1: start worker process 34
+2023/08/14 14:44:03 [notice] 1#1: start worker process 35
+2023/08/14 14:44:03 [notice] 1#1: start worker process 36
+2023/08/14 14:44:03 [notice] 1#1: start worker process 37
+2023/08/14 14:44:03 [notice] 1#1: start worker process 38
+2023/08/14 14:44:03 [notice] 1#1: start worker process 39
+2023/08/14 14:44:03 [notice] 1#1: start worker process 40
+2023/08/14 14:44:03 [notice] 1#1: start worker process 41
+2023/08/14 14:44:03 [notice] 1#1: start worker process 42
+2023/08/14 14:44:03 [notice] 1#1: start worker process 43
+2023/08/14 14:44:35 [crit] 32#32: *9 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:44:35 [crit] 32#32: *9 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:44:36 [crit] 32#32: *3 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:44:36 [crit] 32#32: *3 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:44:44 [crit] 32#32: *8 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:44:44 [crit] 32#32: *8 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:44:51 [crit] 32#32: *8 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:44:51 [crit] 32#32: *8 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.27.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:45:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/08/14 14:45:45 [notice] 32#32: gracefully shutting down
+2023/08/14 14:45:45 [notice] 34#34: gracefully shutting down
+2023/08/14 14:45:45 [notice] 36#36: gracefully shutting down
+2023/08/14 14:45:45 [notice] 35#35: gracefully shutting down
+2023/08/14 14:45:45 [notice] 38#38: gracefully shutting down
+2023/08/14 14:45:45 [notice] 34#34: exiting
+2023/08/14 14:45:45 [notice] 41#41: gracefully shutting down
+2023/08/14 14:45:45 [notice] 36#36: exiting
+2023/08/14 14:45:45 [notice] 43#43: gracefully shutting down
+2023/08/14 14:45:45 [notice] 42#42: gracefully shutting down
+2023/08/14 14:45:45 [notice] 35#35: exiting
+2023/08/14 14:45:45 [notice] 39#39: gracefully shutting down
+2023/08/14 14:45:45 [notice] 38#38: exiting
+2023/08/14 14:45:45 [notice] 33#33: gracefully shutting down
+2023/08/14 14:45:45 [notice] 41#41: exiting
+2023/08/14 14:45:45 [notice] 43#43: exiting
+2023/08/14 14:45:45 [notice] 42#42: exiting
+2023/08/14 14:45:45 [notice] 39#39: exiting
+2023/08/14 14:45:45 [notice] 33#33: exiting
+2023/08/14 14:45:45 [notice] 34#34: exit
+2023/08/14 14:45:45 [notice] 38#38: exit
+2023/08/14 14:45:45 [notice] 43#43: exit
+2023/08/14 14:45:45 [notice] 36#36: exit
+2023/08/14 14:45:45 [notice] 35#35: exit
+2023/08/14 14:45:45 [notice] 41#41: exit
+2023/08/14 14:45:45 [notice] 42#42: exit
+2023/08/14 14:45:45 [notice] 39#39: exit
+2023/08/14 14:45:45 [notice] 32#32: exiting
+2023/08/14 14:45:45 [notice] 33#33: exit
+2023/08/14 14:45:45 [notice] 32#32: exit
+2023/08/14 14:45:45 [notice] 40#40: gracefully shutting down
+2023/08/14 14:45:45 [notice] 40#40: exiting
+2023/08/14 14:45:45 [notice] 40#40: exit
+2023/08/14 14:45:45 [notice] 37#37: gracefully shutting down
+2023/08/14 14:45:45 [notice] 37#37: exiting
+2023/08/14 14:45:45 [notice] 37#37: exit
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/08/14 14:45:45 [notice] 1#1: worker process 33 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: worker process 36 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: worker process 43 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/08/14 14:45:45 [notice] 1#1: worker process 39 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/08/14 14:45:45 [notice] 1#1: worker process 34 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: worker process 41 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2023/08/14 14:45:45 [notice] 1#1: worker process 40 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/08/14 14:45:45 [notice] 1#1: worker process 32 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/08/14 14:45:45 [notice] 1#1: worker process 35 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/08/14 14:45:45 [notice] 1#1: worker process 37 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: worker process 38 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/08/14 14:45:45 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/08/14 14:45:45 [notice] 1#1: worker process 42 exited with code 0
+2023/08/14 14:45:45 [notice] 1#1: exit
+2023/08/14 14:45:54 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:45:54 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:45:54 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:45:54 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:45:54 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:45:54 [notice] 1#1: start worker processes
+2023/08/14 14:45:54 [notice] 1#1: start worker process 32
+2023/08/14 14:45:54 [notice] 1#1: start worker process 33
+2023/08/14 14:45:54 [notice] 1#1: start worker process 34
+2023/08/14 14:45:54 [notice] 1#1: start worker process 35
+2023/08/14 14:45:54 [notice] 1#1: start worker process 36
+2023/08/14 14:45:54 [notice] 1#1: start worker process 37
+2023/08/14 14:45:54 [notice] 1#1: start worker process 38
+2023/08/14 14:45:54 [notice] 1#1: start worker process 39
+2023/08/14 14:45:54 [notice] 1#1: start worker process 40
+2023/08/14 14:45:54 [notice] 1#1: start worker process 41
+2023/08/14 14:45:54 [notice] 1#1: start worker process 42
+2023/08/14 14:45:54 [notice] 1#1: start worker process 43
+2023/08/14 14:46:08 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/08/14 14:46:08 [notice] 32#32: gracefully shutting down
+2023/08/14 14:46:08 [notice] 33#33: gracefully shutting down
+2023/08/14 14:46:08 [notice] 34#34: gracefully shutting down
+2023/08/14 14:46:08 [notice] 41#41: gracefully shutting down
+2023/08/14 14:46:08 [notice] 34#34: exiting
+2023/08/14 14:46:08 [notice] 39#39: gracefully shutting down
+2023/08/14 14:46:08 [notice] 42#42: gracefully shutting down
+2023/08/14 14:46:08 [notice] 35#35: gracefully shutting down
+2023/08/14 14:46:08 [notice] 41#41: exiting
+2023/08/14 14:46:08 [notice] 39#39: exiting
+2023/08/14 14:46:08 [notice] 37#37: gracefully shutting down
+2023/08/14 14:46:08 [notice] 42#42: exiting
+2023/08/14 14:46:08 [notice] 35#35: exiting
+2023/08/14 14:46:08 [notice] 36#36: gracefully shutting down
+2023/08/14 14:46:08 [notice] 37#37: exiting
+2023/08/14 14:46:08 [notice] 33#33: exiting
+2023/08/14 14:46:08 [notice] 36#36: exiting
+2023/08/14 14:46:08 [notice] 32#32: exiting
+2023/08/14 14:46:08 [notice] 35#35: exit
+2023/08/14 14:46:08 [notice] 34#34: exit
+2023/08/14 14:46:08 [notice] 39#39: exit
+2023/08/14 14:46:08 [notice] 41#41: exit
+2023/08/14 14:46:08 [notice] 42#42: exit
+2023/08/14 14:46:08 [notice] 33#33: exit
+2023/08/14 14:46:08 [notice] 37#37: exit
+2023/08/14 14:46:08 [notice] 36#36: exit
+2023/08/14 14:46:08 [notice] 32#32: exit
+2023/08/14 14:46:08 [notice] 40#40: gracefully shutting down
+2023/08/14 14:46:08 [notice] 40#40: exiting
+2023/08/14 14:46:08 [notice] 38#38: gracefully shutting down
+2023/08/14 14:46:08 [notice] 38#38: exiting
+2023/08/14 14:46:08 [notice] 40#40: exit
+2023/08/14 14:46:08 [notice] 38#38: exit
+2023/08/14 14:46:08 [notice] 43#43: gracefully shutting down
+2023/08/14 14:46:08 [notice] 43#43: exiting
+2023/08/14 14:46:08 [notice] 43#43: exit
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/08/14 14:46:08 [notice] 1#1: worker process 33 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: worker process 34 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: worker process 36 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: worker process 37 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: worker process 39 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: worker process 42 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2023/08/14 14:46:08 [notice] 1#1: worker process 41 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/08/14 14:46:08 [notice] 1#1: worker process 32 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/08/14 14:46:08 [notice] 1#1: worker process 35 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2023/08/14 14:46:08 [notice] 1#1: worker process 40 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/08/14 14:46:08 [notice] 1#1: worker process 43 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:46:08 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/08/14 14:46:08 [notice] 1#1: worker process 38 exited with code 0
+2023/08/14 14:46:08 [notice] 1#1: exit
+2023/08/14 14:46:14 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:46:14 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:46:14 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:46:14 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:46:14 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:46:14 [notice] 1#1: start worker processes
+2023/08/14 14:46:14 [notice] 1#1: start worker process 32
+2023/08/14 14:46:14 [notice] 1#1: start worker process 33
+2023/08/14 14:46:14 [notice] 1#1: start worker process 34
+2023/08/14 14:46:14 [notice] 1#1: start worker process 35
+2023/08/14 14:46:14 [notice] 1#1: start worker process 36
+2023/08/14 14:46:14 [notice] 1#1: start worker process 37
+2023/08/14 14:46:14 [notice] 1#1: start worker process 38
+2023/08/14 14:46:14 [notice] 1#1: start worker process 39
+2023/08/14 14:46:14 [notice] 1#1: start worker process 40
+2023/08/14 14:46:14 [notice] 1#1: start worker process 41
+2023/08/14 14:46:14 [notice] 1#1: start worker process 42
+2023/08/14 14:46:14 [notice] 1#1: start worker process 43
+2023/08/14 14:46:43 [crit] 32#32: *14 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:46:43 [crit] 32#32: *14 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:46:45 [crit] 32#32: *21 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:46:45 [crit] 32#32: *21 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:46:50 [crit] 32#32: *23 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:46:50 [crit] 32#32: *23 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.29.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:48:37 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/08/14 14:48:37 [notice] 32#32: gracefully shutting down
+2023/08/14 14:48:37 [notice] 34#34: gracefully shutting down
+2023/08/14 14:48:37 [notice] 35#35: gracefully shutting down
+2023/08/14 14:48:37 [notice] 37#37: gracefully shutting down
+2023/08/14 14:48:37 [notice] 34#34: exiting
+2023/08/14 14:48:37 [notice] 35#35: exiting
+2023/08/14 14:48:37 [notice] 37#37: exiting
+2023/08/14 14:48:37 [notice] 39#39: gracefully shutting down
+2023/08/14 14:48:37 [notice] 36#36: gracefully shutting down
+2023/08/14 14:48:37 [notice] 39#39: exiting
+2023/08/14 14:48:37 [notice] 41#41: gracefully shutting down
+2023/08/14 14:48:37 [notice] 42#42: gracefully shutting down
+2023/08/14 14:48:37 [notice] 36#36: exiting
+2023/08/14 14:48:37 [notice] 41#41: exiting
+2023/08/14 14:48:37 [notice] 42#42: exiting
+2023/08/14 14:48:37 [notice] 34#34: exit
+2023/08/14 14:48:37 [notice] 37#37: exit
+2023/08/14 14:48:37 [notice] 35#35: exit
+2023/08/14 14:48:37 [notice] 36#36: exit
+2023/08/14 14:48:37 [notice] 39#39: exit
+2023/08/14 14:48:37 [notice] 42#42: exit
+2023/08/14 14:48:37 [notice] 41#41: exit
+2023/08/14 14:48:37 [notice] 32#32: exiting
+2023/08/14 14:48:37 [notice] 43#43: gracefully shutting down
+2023/08/14 14:48:37 [notice] 40#40: gracefully shutting down
+2023/08/14 14:48:37 [notice] 43#43: exiting
+2023/08/14 14:48:37 [notice] 40#40: exiting
+2023/08/14 14:48:37 [notice] 32#32: exit
+2023/08/14 14:48:37 [notice] 43#43: exit
+2023/08/14 14:48:37 [notice] 40#40: exit
+2023/08/14 14:48:37 [notice] 33#33: gracefully shutting down
+2023/08/14 14:48:37 [notice] 33#33: exiting
+2023/08/14 14:48:37 [notice] 38#38: gracefully shutting down
+2023/08/14 14:48:37 [notice] 33#33: exit
+2023/08/14 14:48:37 [notice] 38#38: exiting
+2023/08/14 14:48:37 [notice] 38#38: exit
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/08/14 14:48:37 [notice] 1#1: worker process 35 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: worker process 38 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: worker process 41 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: worker process 43 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2023/08/14 14:48:37 [notice] 1#1: worker process 40 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/08/14 14:48:37 [notice] 1#1: worker process 37 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: worker process 42 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/08/14 14:48:37 [notice] 1#1: worker process 32 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: worker process 39 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/08/14 14:48:37 [notice] 1#1: worker process 34 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/08/14 14:48:37 [notice] 1#1: worker process 36 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:48:37 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/08/14 14:48:37 [notice] 1#1: worker process 33 exited with code 0
+2023/08/14 14:48:37 [notice] 1#1: exit
+2023/08/14 14:48:42 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:48:42 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:48:42 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:48:42 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:48:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:48:42 [notice] 1#1: start worker processes
+2023/08/14 14:48:42 [notice] 1#1: start worker process 32
+2023/08/14 14:48:42 [notice] 1#1: start worker process 33
+2023/08/14 14:48:42 [notice] 1#1: start worker process 34
+2023/08/14 14:48:42 [notice] 1#1: start worker process 35
+2023/08/14 14:48:42 [notice] 1#1: start worker process 36
+2023/08/14 14:48:42 [notice] 1#1: start worker process 37
+2023/08/14 14:48:42 [notice] 1#1: start worker process 38
+2023/08/14 14:48:42 [notice] 1#1: start worker process 39
+2023/08/14 14:48:42 [notice] 1#1: start worker process 40
+2023/08/14 14:48:42 [notice] 1#1: start worker process 41
+2023/08/14 14:48:42 [notice] 1#1: start worker process 42
+2023/08/14 14:48:42 [notice] 1#1: start worker process 43
+2023/08/14 14:50:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/08/14 14:50:11 [notice] 32#32: gracefully shutting down
+2023/08/14 14:50:11 [notice] 36#36: gracefully shutting down
+2023/08/14 14:50:11 [notice] 32#32: exiting
+2023/08/14 14:50:11 [notice] 38#38: gracefully shutting down
+2023/08/14 14:50:11 [notice] 36#36: exiting
+2023/08/14 14:50:11 [notice] 38#38: exiting
+2023/08/14 14:50:11 [notice] 34#34: gracefully shutting down
+2023/08/14 14:50:11 [notice] 34#34: exiting
+2023/08/14 14:50:11 [notice] 36#36: exit
+2023/08/14 14:50:11 [notice] 32#32: exit
+2023/08/14 14:50:11 [notice] 38#38: exit
+2023/08/14 14:50:11 [notice] 34#34: exit
+2023/08/14 14:50:11 [notice] 37#37: gracefully shutting down
+2023/08/14 14:50:11 [notice] 35#35: gracefully shutting down
+2023/08/14 14:50:11 [notice] 39#39: gracefully shutting down
+2023/08/14 14:50:11 [notice] 40#40: gracefully shutting down
+2023/08/14 14:50:11 [notice] 42#42: gracefully shutting down
+2023/08/14 14:50:11 [notice] 41#41: gracefully shutting down
+2023/08/14 14:50:11 [notice] 37#37: exiting
+2023/08/14 14:50:11 [notice] 35#35: exiting
+2023/08/14 14:50:11 [notice] 43#43: gracefully shutting down
+2023/08/14 14:50:11 [notice] 39#39: exiting
+2023/08/14 14:50:11 [notice] 40#40: exiting
+2023/08/14 14:50:11 [notice] 42#42: exiting
+2023/08/14 14:50:11 [notice] 41#41: exiting
+2023/08/14 14:50:11 [notice] 43#43: exiting
+2023/08/14 14:50:11 [notice] 35#35: exit
+2023/08/14 14:50:11 [notice] 37#37: exit
+2023/08/14 14:50:11 [notice] 39#39: exit
+2023/08/14 14:50:11 [notice] 42#42: exit
+2023/08/14 14:50:11 [notice] 40#40: exit
+2023/08/14 14:50:11 [notice] 41#41: exit
+2023/08/14 14:50:11 [notice] 43#43: exit
+2023/08/14 14:50:11 [notice] 33#33: gracefully shutting down
+2023/08/14 14:50:11 [notice] 33#33: exiting
+2023/08/14 14:50:11 [notice] 33#33: exit
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/08/14 14:50:11 [notice] 1#1: worker process 32 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 35 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/08/14 14:50:11 [notice] 1#1: worker process 33 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 34 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 37 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/08/14 14:50:11 [notice] 1#1: worker process 39 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/08/14 14:50:11 [notice] 1#1: worker process 38 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/08/14 14:50:11 [notice] 1#1: worker process 40 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 43 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:50:11 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/08/14 14:50:11 [notice] 1#1: worker process 36 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 41 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: worker process 42 exited with code 0
+2023/08/14 14:50:11 [notice] 1#1: exit
+2023/08/14 14:50:16 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:50:16 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:50:16 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:50:16 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:50:16 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:50:16 [notice] 1#1: start worker processes
+2023/08/14 14:50:16 [notice] 1#1: start worker process 32
+2023/08/14 14:50:16 [notice] 1#1: start worker process 33
+2023/08/14 14:50:16 [notice] 1#1: start worker process 34
+2023/08/14 14:50:16 [notice] 1#1: start worker process 35
+2023/08/14 14:50:16 [notice] 1#1: start worker process 36
+2023/08/14 14:50:16 [notice] 1#1: start worker process 37
+2023/08/14 14:50:16 [notice] 1#1: start worker process 38
+2023/08/14 14:50:16 [notice] 1#1: start worker process 39
+2023/08/14 14:50:16 [notice] 1#1: start worker process 40
+2023/08/14 14:50:16 [notice] 1#1: start worker process 41
+2023/08/14 14:50:16 [notice] 1#1: start worker process 42
+2023/08/14 14:50:16 [notice] 1#1: start worker process 43
+2023/08/14 14:51:37 [crit] 33#33: *11 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.31.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:51:37 [crit] 33#33: *11 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 172.31.0.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:52:46 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/08/14 14:52:46 [notice] 32#32: gracefully shutting down
+2023/08/14 14:52:46 [notice] 33#33: gracefully shutting down
+2023/08/14 14:52:46 [notice] 35#35: gracefully shutting down
+2023/08/14 14:52:46 [notice] 36#36: gracefully shutting down
+2023/08/14 14:52:46 [notice] 32#32: exiting
+2023/08/14 14:52:46 [notice] 33#33: exiting
+2023/08/14 14:52:46 [notice] 35#35: exiting
+2023/08/14 14:52:46 [notice] 42#42: gracefully shutting down
+2023/08/14 14:52:46 [notice] 36#36: exiting
+2023/08/14 14:52:46 [notice] 41#41: gracefully shutting down
+2023/08/14 14:52:46 [notice] 37#37: gracefully shutting down
+2023/08/14 14:52:46 [notice] 43#43: gracefully shutting down
+2023/08/14 14:52:46 [notice] 34#34: gracefully shutting down
+2023/08/14 14:52:46 [notice] 39#39: gracefully shutting down
+2023/08/14 14:52:46 [notice] 42#42: exiting
+2023/08/14 14:52:46 [notice] 41#41: exiting
+2023/08/14 14:52:46 [notice] 37#37: exiting
+2023/08/14 14:52:46 [notice] 43#43: exiting
+2023/08/14 14:52:46 [notice] 34#34: exiting
+2023/08/14 14:52:46 [notice] 39#39: exiting
+2023/08/14 14:52:46 [notice] 33#33: exit
+2023/08/14 14:52:46 [notice] 35#35: exit
+2023/08/14 14:52:46 [notice] 32#32: exit
+2023/08/14 14:52:46 [notice] 36#36: exit
+2023/08/14 14:52:46 [notice] 43#43: exit
+2023/08/14 14:52:46 [notice] 41#41: exit
+2023/08/14 14:52:46 [notice] 34#34: exit
+2023/08/14 14:52:46 [notice] 37#37: exit
+2023/08/14 14:52:46 [notice] 39#39: exit
+2023/08/14 14:52:46 [notice] 42#42: exit
+2023/08/14 14:52:46 [notice] 38#38: gracefully shutting down
+2023/08/14 14:52:46 [notice] 38#38: exiting
+2023/08/14 14:52:46 [notice] 38#38: exit
+2023/08/14 14:52:46 [notice] 40#40: gracefully shutting down
+2023/08/14 14:52:46 [notice] 40#40: exiting
+2023/08/14 14:52:46 [notice] 40#40: exit
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2023/08/14 14:52:46 [notice] 1#1: worker process 35 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: worker process 37 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: worker process 41 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/08/14 14:52:46 [notice] 1#1: worker process 32 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: worker process 38 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: worker process 42 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/08/14 14:52:46 [notice] 1#1: worker process 33 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: worker process 36 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/08/14 14:52:46 [notice] 1#1: worker process 43 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/08/14 14:52:46 [notice] 1#1: worker process 39 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/08/14 14:52:46 [notice] 1#1: worker process 34 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: signal 29 (SIGIO) received
+2023/08/14 14:52:46 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2023/08/14 14:52:46 [notice] 1#1: worker process 40 exited with code 0
+2023/08/14 14:52:46 [notice] 1#1: exit
+2023/08/14 14:52:56 [notice] 1#1: using the "epoll" event method
+2023/08/14 14:52:56 [notice] 1#1: nginx/1.21.3
+2023/08/14 14:52:56 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/08/14 14:52:56 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/08/14 14:52:56 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/08/14 14:52:56 [notice] 1#1: start worker processes
+2023/08/14 14:52:56 [notice] 1#1: start worker process 32
+2023/08/14 14:52:56 [notice] 1#1: start worker process 33
+2023/08/14 14:52:56 [notice] 1#1: start worker process 34
+2023/08/14 14:52:56 [notice] 1#1: start worker process 35
+2023/08/14 14:52:56 [notice] 1#1: start worker process 36
+2023/08/14 14:52:56 [notice] 1#1: start worker process 37
+2023/08/14 14:52:56 [notice] 1#1: start worker process 38
+2023/08/14 14:52:56 [notice] 1#1: start worker process 39
+2023/08/14 14:52:56 [notice] 1#1: start worker process 40
+2023/08/14 14:52:56 [notice] 1#1: start worker process 41
+2023/08/14 14:52:56 [notice] 1#1: start worker process 42
+2023/08/14 14:52:56 [notice] 1#1: start worker process 43
+2023/08/14 14:52:59 [crit] 32#32: *2 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:52:59 [crit] 32#32: *2 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 33#33: *1 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:00 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 14:53:03 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 14:53:03 [crit] 32#32: *5 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 15:14:13 [crit] 32#32: *64 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 15:14:13 [crit] 32#32: *64 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090", referrer: "http://localhost:9090/"
+2023/08/14 15:14:18 [crit] 32#32: *64 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"
+2023/08/14 15:14:18 [crit] 32#32: *64 stat() "/app/public/assets/css/style.css" failed (13: Permission denied), client: 192.168.16.1, server: _, request: "GET /assets/css/style.css HTTP/1.1", host: "localhost:9090"

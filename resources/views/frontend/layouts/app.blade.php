@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hotel - Reservation &amp; System</title>
     <link rel="icon" href="img/core-img/favicon.png">
-    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('main/style.css')}}">
 </head>
 
 <body>
@@ -26,11 +26,11 @@
 @include('frontend.layouts.footer')
 
 <!-- **** All JS Files ***** -->
-<script src="{{ asset('public/js/jquery.min.js') }}"></script>
-<script src="{{ asset('public/js/popper.min.js') }}"></script>
-<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('public/js/roberto.bundle.js') }}"></script>
-<script src="{{ asset('public/js/default-assets/active.js') }}"></script>
+<script src={{asset("js/jquery.min.js")}}></script>
+<script src={{asset("js/popper.min.js")}}></script>
+<script src={{asset("js/bootstrap.min.js")}}></script>
+<script src={{asset("js/roberto.bundle.js")}}></script>
+<script src={{asset("js/default-assets/active.js")}}></script>
 
 </body>
 </html>
