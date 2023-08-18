@@ -9,7 +9,7 @@ class UtilityController extends Controller
 {
     public function getContactUs()
     {
-        # code...
+        return view('frontend.utilityPages.contactUs');
     }
     public function storeContactUs(Request $request)
     {
@@ -17,7 +17,7 @@ class UtilityController extends Controller
     }
     public function getAboutUs()
     {
-        # code...
+        return view('frontend.utilityPages.aboutUs');
     }
     public function getNews()
     {
