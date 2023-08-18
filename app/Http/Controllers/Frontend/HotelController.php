@@ -17,7 +17,7 @@ class HotelController extends Controller
     }
     public function getRooms()
     {
-        # code...
+        return view('frontend.hotelPages.rooms');
     }
     public function getSingleRoomInfo()
     {

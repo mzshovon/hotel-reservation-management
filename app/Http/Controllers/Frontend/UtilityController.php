@@ -21,7 +21,7 @@ class UtilityController extends Controller
     }
     public function getNews()
     {
-        # code...
+        return view('frontend.utilityPages.news');
     }
     public function getSingleNews($newsId)
     {
