@@ -49,3 +49,19 @@ services:
             MYSQL_PASSWORD: "${DB_PASSWORD}"
             MYSQL_TCP_PORT: ${DB_PORT}
             MYSQL_UNIX_PORT: ${DB_PORT}
+    redis:
+        container_name: hms_redis
+        image: redis:alpine
+        ports:
+        - "6379:6379"
+        volumes:
+        - ./redis-data/redis:/data
+        entrypoint: redis-server --appendonly yes
+        restart: always
+        env_file:
+            - "./.env"
+        environment:
+            REDIS_CLIENT: ${REDIS_CLIENT}
+            REDIS_HOST: ${REDIS_HOST}
+            REDIS_PORT: ${REDIS_HOST}
+            REDIS_PASSWORD: ${REDIS_PASSWORD}

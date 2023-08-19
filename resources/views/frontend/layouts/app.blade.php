@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hotel - Reservation &amp; System</title>
-    <link rel="icon" href="img/core-img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <!-- **** All CSS Files ***** -->
     @include('frontend.layouts.partials.css')
 </head>
