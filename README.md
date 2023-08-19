@@ -25,6 +25,12 @@ A laravel 9.0 based management and automation project on managing hotels and inv
   php artisan optimize
   php artisan route:clear
 ```
+- Get access to redis-cli
+```bash
+  docker exec -it hms_redis redis-cli -p <port>
+  PING
+  GET KEYS
+```
 #### If you find any permission related issue from your storage(mostly in linux), Do the following steps and then browse the project with port 9090
 
 ```bash
