@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\Hotels\HotelsService;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -15,9 +16,10 @@ class HotelController extends Controller
     {
         # code...
     }
-    public function getRooms()
+    public function getRooms(HotelsService $hotelsService)
     {
-        return view('frontend.hotelPages.rooms');
+        $roomData = $hotelsService->getHotels();
+        return view('frontend.hotelPages.rooms', $roomData);
     }
     public function getSingleRoomInfo()
     {
