@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Services\Hotels\HotelsService;
+use App\Repositories\HotelServiceRepositoryInterface;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
+    private HotelServiceRepositoryInterface $hotelServiceRepositoryInterface;
+
+    public function __construct(HotelServiceRepositoryInterface $hotelServiceRepositoryInterface)
+    {
+        $this->hotelServiceRepositoryInterface = $hotelServiceRepositoryInterface;
+    }
+
     public function getHotels()
     {
         # code...
@@ -16,10 +23,10 @@ class HotelController extends Controller
     {
         # code...
     }
-    public function getRooms(HotelsService $hotelsService)
+    public function getRooms()
     {
-        $roomData = $hotelsService->getHotels();
-        return view('frontend.hotelPages.rooms', $roomData);
+        $data['roomData'] = customPaginate($this->hotelServiceRepositoryInterface->getRooms(), 8);
+        return view('frontend.hotelPages.rooms', $data);
     }
     public function getSingleRoomInfo()
     {

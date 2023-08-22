@@ -20,7 +20,7 @@ class HotelsService implements HotelServiceRepositoryInterface {
 
     public function getRooms()
     {
-
+        return $this->roomArrayTestData ?? []; //# For testing purpose
     }
 
     public function getHotelById(int $hotelId)
@@ -29,11 +29,6 @@ class HotelsService implements HotelServiceRepositoryInterface {
     }
 
     public function getRoomById(int $roomId)
-    {
-
-    }
-
-    public function getTestDataById(int $roomId)
     {
 
     }

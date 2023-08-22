@@ -28,113 +28,38 @@
         <div class="row">
             <div class="col-12 col-lg-8">
                 <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/43.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Room View Sea</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
+                @forelse ($roomData as $singleRoom)
+                    <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Room Thumbnail -->
+                        <div class="room-thumbnail">
+                            <img src="img/43.jpg" alt="">
                         </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <!-- Room Content -->
+                        <div class="room-content">
+                            <h2>{{@$singleRoom['name']}}</h2>
+                            <h4>{{@$singleRoom['rent']}} <span>/ {{@$singleRoom['rentDuration']}}</span></h4>
+                            <div class="room-feature">
+                                <h6>Size: <span>{{@$singleRoom['size']}}</span></h6>
+                                <h6>Capacity: <span>Max person {{@$singleRoom['capacity']}}</span></h6>
+                                <h6>Bed: <span>{{@$singleRoom['bed']}}</span></h6>
+                                <h6>Services: <span>{{@$singleRoom['services']}}</span></h6>
+                            </div>
+                            <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-                </div>
+                @empty
 
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/44.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Small Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="500ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/45.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Premium King Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="700ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/46.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Room Vip King</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="900ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/47.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Royal Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
+                @endforelse
 
                 <!-- Pagination -->
                 <nav class="roberto-pagination wow fadeInUp mb-100" data-wow-delay="1000ms">
-                    <ul class="pagination">
+                    {{$roomData->links('pagination::bootstrap-5')}}
+                    {{-- <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">Next <i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    </ul> --}}
                 </nav>
             </div>
 
