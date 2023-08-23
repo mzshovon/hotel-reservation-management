@@ -18,7 +18,10 @@ class HotelsService implements HotelServiceRepositoryInterface {
         return $this->roomArrayTestData ?? []; //# For testing purpose
     }
 
-    public function getRooms()
+    /**
+     * @return array
+     */
+    public function getRooms() : array
     {
         return $this->roomArrayTestData ?? []; //# For testing purpose
     }

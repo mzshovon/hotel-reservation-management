@@ -137,6 +137,147 @@ return [
             "capacity" => "5",
             "services" => "Wifi,Televisions,Fridge....",
         ],
+    ],
+    "news" => [
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+        [
+            "title" => "All hotels will be opened for 12 hours",
+            "date" => "OCT 02, 2023",
+            "type" => "Event",
+            "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
+        ],
+
     ]
 
 ];
