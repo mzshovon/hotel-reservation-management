@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 | Naming must be needed to define uniqely every route
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::group(['namespace' => 'App\Http\Controllers\admin'], function() {
+    Route::get('/admin/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
+    Route::resource('room-types','RoomTypesController');
+});
 Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");
 Route::get('/contact-us', [UtilityController::class, 'getContactUs'])->name("contactUs");
 Route::post('/contact-us', [UtilityController::class, 'storeContactUs'])->name("storeContactUs");
