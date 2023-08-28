@@ -20,10 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Auth', 'middleware' => ['guest']], function() {
+    Route::get('/register', 'RegisterController@show')->name('register.show');
+    Route::post('/register', 'RegisterController@register')->name('register.perform');
+    Route::get('/login', 'LoginController@show')->name('login.show');
+    Route::post('/login', 'LoginController@login')->name('login.perform');
+    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\admin', 'prefix' => 'admin'], function() {
     Route::get('dashboard', 'HomeController@dashboard')->name('admin.dashboard');
     Route::resource('room-types','RoomTypesController');
 });
+
 Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");
 Route::get('/contact-us', [UtilityController::class, 'getContactUs'])->name("contactUs");
 Route::post('/contact-us', [UtilityController::class, 'storeContactUs'])->name("storeContactUs");
