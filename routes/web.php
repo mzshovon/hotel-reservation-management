@@ -20,8 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\admin'], function() {
-    Route::get('/admin/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
+Route::group(['namespace' => 'App\Http\Controllers\admin', 'prefix' => 'admin'], function() {
+    Route::get('dashboard', 'HomeController@dashboard')->name('admin.dashboard');
     Route::resource('room-types','RoomTypesController');
 });
 Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");

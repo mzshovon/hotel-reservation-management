@@ -28,113 +28,38 @@
         <div class="row">
             <div class="col-12 col-lg-8">
                 <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/43.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Room View Sea</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
+                @forelse ($roomData as $singleRoom)
+                    <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
+                        <!-- Room Thumbnail -->
+                        <div class="room-thumbnail">
+                            <img src="img/43.jpg" alt="">
                         </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <!-- Room Content -->
+                        <div class="room-content">
+                            <h2>{{@$singleRoom['name']}}</h2>
+                            <h4>{{@$singleRoom['rent']}} <span>/ {{@$singleRoom['rentDuration']}}</span></h4>
+                            <div class="room-feature">
+                                <h6>Size: <span>{{@$singleRoom['size']}}</span></h6>
+                                <h6>Capacity: <span>Max person {{@$singleRoom['capacity']}}</span></h6>
+                                <h6>Bed: <span>{{@$singleRoom['bed']}}</span></h6>
+                                <h6>Services: <span>{{@$singleRoom['services']}}</span></h6>
+                            </div>
+                            <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-                </div>
+                @empty
 
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/44.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Small Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="500ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/45.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Premium King Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="700ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/46.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Room Vip King</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-
-                <!-- Single Room Area -->
-                <div class="single-room-area d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="900ms">
-                    <!-- Room Thumbnail -->
-                    <div class="room-thumbnail">
-                        <img src="img/47.jpg" alt="">
-                    </div>
-                    <!-- Room Content -->
-                    <div class="room-content">
-                        <h2>Royal Room</h2>
-                        <h4>400$ <span>/ Day</span></h4>
-                        <div class="room-feature">
-                            <h6>Size: <span>30 ft</span></h6>
-                            <h6>Capacity: <span>Max persion 5</span></h6>
-                            <h6>Bed: <span>King beds</span></h6>
-                            <h6>Services: <span>Wifi, television ...</span></h6>
-                        </div>
-                        <a href="#" class="btn view-detail-btn">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
+                @endforelse
 
                 <!-- Pagination -->
                 <nav class="roberto-pagination wow fadeInUp mb-100" data-wow-delay="1000ms">
-                    <ul class="pagination">
+                    {{$roomData->links('pagination::bootstrap-5')}}
+                    {{-- <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">Next <i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    </ul> --}}
                 </nav>
             </div>
 
@@ -203,47 +128,7 @@
 </div>
 <!-- Rooms Area End -->
 
-<!-- Call To Action Area Start -->
-<section class="roberto-cta-area">
-    <div class="container">
-        <div class="cta-content bg-img bg-overlay jarallax" style="background-image: url(img/1.jpg);">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-7">
-                    <div class="cta-text mb-50">
-                        <h2>Contact us now!</h2>
-                        <h6>Contact (+12) 345-678-9999 to book directly or for advice</h6>
-                    </div>
-                </div>
-                <div class="col-12 col-md-5 text-right">
-                    <a href="#" class="btn roberto-btn mb-50">Contact Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Call To Action Area End -->
-
-<!-- Partner Area Start -->
-<div class="partner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="partner-logo-content d-flex align-items-center justify-content-between wow fadeInUp" data-wow-delay="300ms">
-                    <!-- Single Partner Logo -->
-                    <a href="#" class="partner-logo"><img src="img/p1.png" alt=""></a>
-                    <!-- Single Partner Logo -->
-                    <a href="#" class="partner-logo"><img src="img/p2.png" alt=""></a>
-                    <!-- Single Partner Logo -->
-                    <a href="#" class="partner-logo"><img src="img/p3.png" alt=""></a>
-                    <!-- Single Partner Logo -->
-                    <a href="#" class="partner-logo"><img src="img/p4.png" alt=""></a>
-                    <!-- Single Partner Logo -->
-                    <a href="#" class="partner-logo"><img src="img/p5.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Partner Area End -->
+@include('frontend.layouts.callActionPage')
+@include('frontend.layouts.partners')
 
 @endsection
