@@ -36,3 +36,7 @@ Route::get('/hotels', [HotelController::class, 'getHotels'])->name("hotels");
 Route::get('/hotels/{hotelId}', [HotelController::class, 'getSingleHotelInfo'])->name("singleHotelInfo");
 Route::get('/rooms', [HotelController::class, 'getRooms'])->name("rooms");
 Route::get('/rooms/{roomId}', [HotelController::class, 'getSingleRoomInfo'])->name("singleRoomInfo");
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
