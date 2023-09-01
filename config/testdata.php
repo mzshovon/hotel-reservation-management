@@ -278,6 +278,23 @@ return [
             "description" => "A round-the-world trip remains the world’s greatest journey. For two out of every three people, this is the ultimate travel experience, according to recent research...",
         ],
 
-    ]
+    ],
+    "roomTypes" => [
+        [
+            "title" => "Suit Rooms",
+            "status" => "1",
+            "description" => "Some content will place here"
+        ],
+        [
+            "title" => "AC Rooms",
+            "status" => "1",
+            "description" => "Some content will place here"
+        ],
+        [
+            "title" => "Non-ac Rooms",
+            "status" => "1",
+            "description" => "Some content will place here"
+        ],
+    ],
 
 ];

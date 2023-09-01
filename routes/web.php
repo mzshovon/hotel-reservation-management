@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\RoomTypesController;
 use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
 use App\Http\Controllers\Frontend\UtilityController;
@@ -20,10 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'App\Http\Controllers\admin'], function() {
-    Route::get('/admin/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
-    Route::resource('room-types','RoomTypesController');
-});
 Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");
 Route::get('/contact-us', [UtilityController::class, 'getContactUs'])->name("contactUs");
 Route::post('/contact-us', [UtilityController::class, 'storeContactUs'])->name("storeContactUs");
@@ -39,4 +37,14 @@ Route::get('/rooms/{roomId}', [HotelController::class, 'getSingleRoomInfo'])->na
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// admin routes
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    // Room types routes
+    Route::get('room-types', [RoomTypesController::class, 'index'])->name('room-types.index');
+    Route::get('room-types/create', [RoomTypesController::class, 'create'])->name('room-types.create');
+    Route::post('room-types/store', [RoomTypesController::class, 'store'])->name('room-types.store');
+    Route::get('room-types/{id}/edit', [RoomTypesController::class, 'edit'])->name('room-types.edit');
+});
+
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
