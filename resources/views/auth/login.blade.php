@@ -9,9 +9,9 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
+                <a href="" class="logo d-flex align-items-center w-auto">
+                    <img src="{{ asset('/') }}admin/assets/img/logo.png" alt="">
+                    <span class="d-none d-lg-block">{{env('APP_NAME')}}</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -51,7 +51,14 @@
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
+                        <p class="text-center">O/R</p>
+                        <div class="col-6 offset-4">
+                            <a href="{{route("socialAuth",["socialType" => "google"])}}"><i class="bx bxl-facebook-circle bx-lg" style="color:rgb(81, 81, 199)"></i></a>
+                            <a href="{{route("socialAuth",["socialType" => "google"])}}"><i class="bx bxl-google-plus-circle bx-lg" style="color: rgb(151, 58, 58)"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Don't have account? <a href="{{route('register')}}">Create an account</a></p>
                     </div>
                   </form>
 
