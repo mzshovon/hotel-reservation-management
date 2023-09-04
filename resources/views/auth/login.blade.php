@@ -50,13 +50,7 @@
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
-                    <div class="col-12">
-                        <p class="text-center">O/R</p>
-                        <div class="col-6 offset-4">
-                            <a href="{{route("socialAuth",["socialType" => "google"])}}"><i class="bx bxl-facebook-circle bx-lg" style="color:rgb(81, 81, 199)"></i></a>
-                            <a href="{{route("socialAuth",["socialType" => "google"])}}"><i class="bx bxl-google-plus-circle bx-lg" style="color: rgb(151, 58, 58)"></i></a>
-                        </div>
-                    </div>
+                    @include('auth.layouts.partials.socialAuth')
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="{{route('register')}}">Create an account</a></p>
                     </div>
