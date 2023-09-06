@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Enums;
 
-enum ModuleEnum: string {
+enum ModuleEnum: int {
     case Login = 1;
     case SocialLogin = 2;
     case Register = 3;

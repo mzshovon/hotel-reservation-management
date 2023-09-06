@@ -2,6 +2,7 @@
 
 namespace App\Http\Logger\Services;
 
+use App\Http\Logger\Repositories\ActivityLoggerInterface;
 use App\Models\ActivityLog;
 use Carbon\Carbon;
 
@@ -12,7 +13,6 @@ class ActivityLoggerService implements ActivityLoggerInterface
      * @return void
      */
     public function log($event): void {
-        // $activityLog = new ActivityLog();
 
         $data = [
             'module' => $event->module,
@@ -24,6 +24,6 @@ class ActivityLoggerService implements ActivityLoggerInterface
             'updated_at' => Carbon::now(),
         ];
 
-        // $activityLog->insert($data);
+        ActivityLog::storeActivityLog($data);
     }
 }

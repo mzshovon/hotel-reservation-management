@@ -54,6 +54,7 @@ class LoginController extends Controller
         try {
 
             $socialUser = Socialite::driver($socialType)->user();
+
             $user = User::getSingleUserByParam("social_id", $socialUser->getId());
 
             if(!$user) {
@@ -69,7 +70,7 @@ class LoginController extends Controller
             }
 
             if(Auth::login($user)) {
-                new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($userInfo), "Social Login Successfully", "social-login");
+                event(new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($user), "Social Login Successfully", "social-login", $user->id));
                 return redirect()->intended($this->redirectTo);
             }
 
