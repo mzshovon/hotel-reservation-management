@@ -60,7 +60,7 @@
               </div>
 
               <div class="credits">
-                Designed by <a href="#">US</a>
+                Developed & Designed by <a href="#">US</a>
               </div>
 
             </div>

@@ -52,25 +52,24 @@ class LoginController extends Controller
         try {
 
             $socialUser = Socialite::driver($socialType)->user();
-            $user = User::where("social_id", $socialUser->getId())->first();
+            $user = User::getSingleUserByParam("social_id", $socialUser->getId());
 
             if(!$user) {
-                $newUser = User::create([
+
+                $userInfo = [
                     'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                     'social_id' => $socialUser->getId(),
                     'social_type' => $socialType,
-                ]);
-
-                Auth::login($newUser);
-                return redirect()->intended('admin/dashboard');
+                ];
+                $user = User::createUser($userInfo)
             }
+
             Auth::login($user);
             return redirect()->intended('admin/dashboard');
 
         } catch (\Throwable $th) {
-            //throw $th;
-            dd($th);
+            throw $th;
         }
     }
 }
