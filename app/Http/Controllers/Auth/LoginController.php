@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\ActivityLogEvent;
 use App\Http\Controllers\Controller;
+use App\Http\Enums\ModuleEnum;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -52,7 +54,6 @@ class LoginController extends Controller
         try {
 
             $socialUser = Socialite::driver($socialType)->user();
-            dd($socialUser);
             $user = User::getSingleUserByParam("social_id", $socialUser->getId());
 
             if(!$user) {
@@ -62,12 +63,15 @@ class LoginController extends Controller
                     'email' => $socialUser->getEmail(),
                     'social_id' => $socialUser->getId(),
                     'social_type' => $socialType,
+                    'profile_image' => $socialUser->getAvatar(),
                 ];
                 $user = User::createUser($userInfo);
             }
 
-            Auth::login($user);
-            return redirect()->intended($this->redirectTo);
+            if(Auth::login($user)) {
+                new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($userInfo), "Social Login Successfully", "social-login");
+                return redirect()->intended($this->redirectTo);
+            }
 
         } catch (\Throwable $th) {
             throw $th;

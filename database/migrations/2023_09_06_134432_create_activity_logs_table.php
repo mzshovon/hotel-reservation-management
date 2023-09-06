@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('module');
+            $table->string('type')->nullable();
+            $table->longText('data');
+            $table->string('message');
+            $table->unsignedInteger('created_by')->nullable();
             $table->timestamps();
         });
     }

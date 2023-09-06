@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Http\Logger\Repositories\ActivityLoggerInterface;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -12,7 +13,7 @@ class ActivityLogEventListener
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(private ActivityLoggerInterface $logger)
     {
         //
     }
@@ -25,6 +26,6 @@ class ActivityLogEventListener
      */
     public function handle($event)
     {
-        //
+        $this->logger->log($event);
     }
 }

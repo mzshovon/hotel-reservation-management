@@ -14,14 +14,24 @@ class ActivityLogEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public string $module;
+    public string $data;
+    public string $message;
+    public mixed $type;
+    public int|null $userId;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $module, string $data, string $message, $type = null, $userId = null)
     {
-        //
+        $this->module = $module;
+        $this->data = $data;
+        $this->message = $message;
+        $this->type = $type;
+        $this->userId = $userId;
     }
 
     /**

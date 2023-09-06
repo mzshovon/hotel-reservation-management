@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('social_id')->nullable();
             $table->string('social_type')->nullable();
+            $table->longText('profile_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
