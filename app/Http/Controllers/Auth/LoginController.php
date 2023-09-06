@@ -52,6 +52,7 @@ class LoginController extends Controller
         try {
 
             $socialUser = Socialite::driver($socialType)->user();
+            dd($socialUser);
             $user = User::getSingleUserByParam("social_id", $socialUser->getId());
 
             if(!$user) {
@@ -66,7 +67,7 @@ class LoginController extends Controller
             }
 
             Auth::login($user);
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended($this->redirectTo);
 
         } catch (\Throwable $th) {
             throw $th;
