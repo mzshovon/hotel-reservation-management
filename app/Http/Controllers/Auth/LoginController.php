@@ -62,7 +62,7 @@ class LoginController extends Controller
                     'social_id' => $socialUser->getId(),
                     'social_type' => $socialType,
                 ];
-                $user = User::createUser($userInfo)
+                $user = User::createUser($userInfo);
             }
 
             Auth::login($user);
