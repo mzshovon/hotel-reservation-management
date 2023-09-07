@@ -9,6 +9,10 @@ class ActivityLog extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "module", "type", "data", "message", "created_by"
+    ];
+
     public static function storeActivityLog(array $activityLogInfo)
     {
         return self::create($activityLogInfo);

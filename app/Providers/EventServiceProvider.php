@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\ActivityLogEvent;
+use App\Listeners\ActivityLogEventListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        ActivityLogEvent::class => [
+            ActivityLogEventListener::class,
+        ],
     ];
 
     /**
@@ -30,13 +35,13 @@ class EventServiceProvider extends ServiceProvider
         //
     }
 
-    /**
-     * Determine if events and listeners should be automatically discovered.
-     *
-     * @return bool
-     */
-    public function shouldDiscoverEvents()
-    {
-        return false;
-    }
+    // /**
+    //  * Determine if events and listeners should be automatically discovered.
+    //  *
+    //  * @return bool
+    //  */
+    // public function shouldDiscoverEvents()
+    // {
+    //     return true;
+    // }
 }

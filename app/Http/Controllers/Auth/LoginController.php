@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
@@ -69,10 +70,9 @@ class LoginController extends Controller
                 $user = User::createUser($userInfo);
             }
 
-            if(Auth::login($user)) {
-                event(new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($user), "Social Login Successfully", "social-login", $user->id));
-                return redirect()->intended($this->redirectTo);
-            }
+            Auth::login($user);
+            event(new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($user), "Social Login Successfully", "social-login", $user->id));
+            return redirect()->intended($this->redirectTo);
 
         } catch (\Throwable $th) {
             throw $th;
