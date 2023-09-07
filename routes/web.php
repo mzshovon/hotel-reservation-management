@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\admin\HomeController;
-use App\Http\Controllers\admin\RoomTypesController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\RoomTypesController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
