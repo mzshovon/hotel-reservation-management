@@ -24,6 +24,32 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
+
+        <li class="nav-item">
+            <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
+                href="{{ route('admin.dashboard') }}">
+                <i class="bi bi-people"></i>
+                <span>User</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
+                href="{{ route('admin.dashboard') }}">
+                <i class="bi bi-receipt-cutoff"></i>
+                <span>Report</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+
+        <li class="nav-item">
+            <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
+                href="{{ route('admin.dashboard') }}">
+                <i class="bi bi-file-pdf-fill"></i>
+                <span>Invoice</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
         <li class="nav-item">
           <a class="nav-link @if(in_array($route, ['admin.room-types.index'])) nav-item-active-a @else collapsed @endif" data-bs-target="#configurations-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-menu-button-wide"></i><span>Configurations</span><i class="bi bi-chevron-down ms-auto"></i>

@@ -51,6 +51,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::get('room-types/create', [RoomTypesController::class, 'create'])->name('room-types.create');
     Route::post('room-types/store', [RoomTypesController::class, 'store'])->name('room-types.store');
     Route::get('room-types/{id}/edit', [RoomTypesController::class, 'edit'])->name('room-types.edit');
+
+    Route::group(['prefix' => 'error'], function() {
+        Route::get('404', function(){
+            return view('errorPages.404');
+        })->name('not-found');
+        Route::get('500', function(){
+            return view('errorPages.500');
+        })->name('server-issue');
+    });
 });
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
