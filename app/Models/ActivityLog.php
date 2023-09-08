@@ -13,9 +13,16 @@ class ActivityLog extends Model
         "module", "type", "data", "message", "created_by"
     ];
 
-    public static function getActivityLogData(int $userId)
+    protected static $selectedColumns = ["message", "created_at"];
+
+    /**
+     * @param int $userId
+     *
+     * @return array
+     */
+    public static function getActivityLogData(int $userId) : array|null
     {
-        return self::where("created_by", $userId)->take(10);
+        return self::where("created_by", $userId)->orderBy("created_at", "desc")->get(self::$selectedColumns)->take(10)->toArray();
     }
 
     /**
