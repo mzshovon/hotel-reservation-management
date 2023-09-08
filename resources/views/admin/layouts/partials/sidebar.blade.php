@@ -17,7 +17,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
+            <a class="nav-link {{in_array($route, ['admin.dashboard']) ? 'nav-item-active-a' : 'collapsed'}}"
                 href="{{ route('admin.dashboard') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
@@ -26,7 +26,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
+            <a class="nav-link {{in_array($route, ['system.index']) ? 'nav-item-active-a' : 'collapsed'}}"
                 href="{{ route('admin.dashboard') }}">
                 <i class="bi bi-people"></i>
                 <span>User</span>
