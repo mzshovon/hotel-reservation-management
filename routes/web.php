@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminUtilityController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RoomTypesController;
 use App\Http\Controllers\Auth\LoginController;
@@ -46,11 +47,17 @@ Auth::routes();
 // admin routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
     // Room types routes
     Route::get('room-types', [RoomTypesController::class, 'index'])->name('room-types.index');
     Route::get('room-types/create', [RoomTypesController::class, 'create'])->name('room-types.create');
     Route::post('room-types/store', [RoomTypesController::class, 'store'])->name('room-types.store');
     Route::get('room-types/{id}/edit', [RoomTypesController::class, 'edit'])->name('room-types.edit');
+
+    // Activity Log routes
+    Route::group(['prefix' => 'activity-log'], function() {
+        Route::get('/', [AdminUtilityController::class, 'getActivityLogs'])->name('activityLogs');
+    });
 
     Route::group(['prefix' => 'error'], function() {
         Route::get('404', function(){

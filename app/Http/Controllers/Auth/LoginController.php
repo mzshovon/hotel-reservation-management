@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Events\ActivityLogEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Enums\ModuleEnum;
+use App\Http\Enums\StatusEnum;
+use App\Http\Enums\StatusValueEnum;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -63,6 +65,7 @@ class LoginController extends Controller
                 $userInfo = [
                     'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
+                    'status' => StatusValueEnum::ActiveValue->value,
                     'social_id' => $socialUser->getId(),
                     'social_type' => $socialType,
                     'profile_image' => $socialUser->getAvatar(),

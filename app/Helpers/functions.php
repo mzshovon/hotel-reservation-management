@@ -22,3 +22,13 @@ if (!function_exists('customPaginate')) {
     }
 }
 
+if (!function_exists('getUserInfo')) {
+    /**
+     * @return mixed
+     */
+    function getUserInfo()
+    {
+        return auth()->user();
+    }
+}
+

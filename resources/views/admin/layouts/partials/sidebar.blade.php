@@ -35,7 +35,7 @@
 
         <li class="nav-item">
             <a class="nav-link @if (in_array($route, ['system.index'])) nav-item-active-a @else collapsed @endif"
-                href="{{ route('admin.dashboard') }}">
+                href="{{ route('admin.activityLogs') }}">
                 <i class="bi bi-receipt-cutoff"></i>
                 <span>Report</span>
             </a>

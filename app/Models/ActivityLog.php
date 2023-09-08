@@ -13,6 +13,16 @@ class ActivityLog extends Model
         "module", "type", "data", "message", "created_by"
     ];
 
+    public static function getActivityLogData(int $userId)
+    {
+        return self::where("created_by", $userId)->take(10);
+    }
+
+    /**
+     * @param array $activityLogInfo
+     *
+     * @return mixed
+     */
     public static function storeActivityLog(array $activityLogInfo)
     {
         return self::create($activityLogInfo);
