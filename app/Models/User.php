@@ -46,6 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function getAllUsers()
+    {
+        return self::orderBy('updated_at', 'desc')->get();
+    }
+
     public static function getSingleUserByParam($whereParam, $value)
     {
         return self::where($whereParam, $value)->first();

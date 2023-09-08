@@ -8,10 +8,7 @@ use Carbon\Carbon;
 
 class AdminUtilitiesService implements AdminUtilityServiceReporsitoryInterface {
 
-    public function __construct(private ActivityLog $activityLog)
-    {
-
-    }
+    public function __construct(private ActivityLog $activityLog){}
 
     public function getActivityLogData()
     {

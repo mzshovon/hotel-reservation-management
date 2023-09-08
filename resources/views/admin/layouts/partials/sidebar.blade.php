@@ -26,8 +26,8 @@
 
 
         <li class="nav-item">
-            <a class="nav-link {{in_array($route, ['system.index']) ? 'nav-item-active-a' : 'collapsed'}}"
-                href="{{ route('admin.dashboard') }}">
+            <a class="nav-link {{in_array($route, ['admin.usersList']) ? 'nav-item-active-a' : 'collapsed'}}"
+                href="{{ route('admin.usersList') }}">
                 <i class="bi bi-people"></i>
                 <span>User</span>
             </a>

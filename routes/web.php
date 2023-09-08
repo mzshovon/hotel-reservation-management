@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminUtilityController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\RoomTypesController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
@@ -57,6 +58,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     // Activity Log routes
     Route::group(['prefix' => 'activity-log'], function() {
         Route::get('/', [AdminUtilityController::class, 'getActivityLogs'])->name('activityLogs');
+    });
+
+    // Activity Log routes
+    Route::group(['prefix' => 'users'], function() {
+        Route::get('/', [UserController::class, 'getUsers'])->name('usersList');
+        Route::post('/store', [UserController::class, 'createUser'])->name('createUser');
+        Route::put('/update/{id}', [UserController::class, 'updateUser'])->name('updateUser');
+        Route::delete('/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
     });
 
     Route::group(['prefix' => 'error'], function() {
