@@ -9647,3 +9647,5 @@
 172.19.0.1 - - [08/Sep/2023:02:33:01 +0000] "GET /admin/room-types HTTP/1.1" 200 4154 "http://localhost:9090/admin/room-types" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" "-"
 172.19.0.1 - - [08/Sep/2023:02:33:24 +0000] "GET /admin/dashboard HTTP/1.1" 200 7084 "http://localhost:9090/admin/room-types" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" "-"
 172.19.0.1 - - [08/Sep/2023:02:33:35 +0000] "GET /admin/dashboard HTTP/1.1" 200 7084 "http://localhost:9090/admin/dashboard" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" "-"
+172.25.0.1 - - [09/Sep/2023:13:17:43 +0000] "POST /login HTTP/1.1" 500 1139490 "http://localhost:9090/login" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" "-"
+172.25.0.1 - - [09/Sep/2023:13:17:56 +0000] "POST /login HTTP/1.1" 500 1139490 "http://localhost:9090/login" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" "-"

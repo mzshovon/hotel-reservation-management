@@ -121,11 +121,12 @@ return [
 
     'redis' => [
 
-        'client' => env('REDIS_CLIENT', 'phpredis'),
+        'client' => env('REDIS_CLIENT', 'redis'),
 
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', false),
+            'cluster' => false,
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'parameters' => ['password' => env('REDIS_PASSWORD', null)],
         ],
 
         'default' => [
