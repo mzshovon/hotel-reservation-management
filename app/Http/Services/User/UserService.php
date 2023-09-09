@@ -31,7 +31,7 @@ class UserService implements UserServiceRepositoryInterface {
             $formatForStoreUser = [
                 "name" => $name,
                 "email" => $email,
-                "password" => Hash::make($email),
+                "password" => \bcrypt($email),
                 "status" => $status,
             ];
 
