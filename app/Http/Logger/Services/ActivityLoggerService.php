@@ -18,7 +18,7 @@ class ActivityLoggerService implements ActivityLoggerInterface
             'type' => $event->type,
             'data' => $event->data,
             'message' => $event->message,
-            'created_by' => $event->userId ?? auth()->user()->id,
+            'created_by' => $event->userId ?? getUserInfo()->id,
         ];
 
         ActivityLog::storeActivityLog($data);

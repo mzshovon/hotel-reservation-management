@@ -51,13 +51,36 @@ class User extends Authenticatable
         return self::orderBy('updated_at', 'desc')->get();
     }
 
-    public static function getSingleUserByParam($whereParam, $value)
+    /**
+     * @param string $whereParam
+     * @param mixed $value
+     *
+     * @return
+     */
+    public static function getSingleUserByParam(string $whereParam, $value)
     {
         return self::where($whereParam, $value)->first();
     }
 
+    /**
+     * @param array $userInfo
+     *
+     * @return
+     */
     public static function createUser(array $userInfo)
     {
         return self::create($userInfo);;
+    }
+
+    /**
+     * @param string $whereParam
+     * @param int|string $value
+     * @param array|null $updatedInfo
+     *
+     * @return mixed
+     */
+    public static function updateUserByParam(string $whereParam, int|string $value, array|null $updatedInfo)
+    {
+        return self::where($whereParam, $value)->update($updatedInfo);
     }
 }

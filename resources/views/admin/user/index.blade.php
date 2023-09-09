@@ -50,7 +50,7 @@
                             <th scope="row">{{ ++$key }}</th>
                             <td>{{ $user['name'] }}</td>
                             <td>{{ $user['email'] }}</td>
-                            <td>{{ ucfirst($user['social_type']) ?? 'Portal' }}</td>
+                            <td>{{ $user['social_type'] ? ucfirst($user['social_type']) : 'Portal' }}</td>
                             <td>
                                 <span class="badge bg-{{ $user['status'] == 1 ? 'success' : 'warning' }}">
                                     <i class="bi {{ $user['status'] == 1 ? 'bi-check-circle me-1' : 'bi-exclamation-triangle me-1' }}"></i>
@@ -59,7 +59,9 @@
                             </td>
                             <td>
                               <div class="d-flex">
-                                  <a href="javascript:void(0)" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                  <a href="javascript:void(0)"
+                                  onclick="modalShow(`{{ $user['name'] }}`, `{{ $user['email'] }}`, `{{ $user['status'] }}`, `{{ $user['id'] }}`)"
+                                  class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
                               </div>
                           </td>
                         </tr>
@@ -70,10 +72,72 @@
 
             </div>
           </div>
-
+          <div class="modal fade" id="create-or-edit-modal" tabindex="-1" data-bs-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="submitModalForm" action="{{ route('admin.createUser') }}" method="POST">
+                        @csrf
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create/Edit User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="id" id="id_user">
+                            <div class="modal-body">
+                                <input type="text" class="form-control" placeholder="Enter name" name="name" id="id_name" required>
+                                <br>
+                                <input type="email" class="form-control" placeholder="Enter email" name="email" id="id_email" required>
+                                <br>
+                                <select name="status" id="id_status" class="form-control">
+                                  <option id="option_id1" value="1">Active</option>
+                                  <option id="option_id0" value="0">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </section>
 
   </main><!-- End #main -->
 @endsection
+
+@push('script')
+    <script>
+        function modalShow(name, email, status, userId) {
+            if (name) {
+                $("#id_name").val(name);
+            } else{
+                $("#id_name").val('');
+            }
+            if (email) {
+                $("#id_email").val(email);
+            } else{
+                $("#id_email").val('');
+            }
+            if (status) {
+                $("#option_id"+status).prop('selected',true);
+            } else{
+                $('#id_status').find($('option')).prop('selected',false);
+            }
+            if (userId) {
+                $("#id_user").val(userId);
+                var url = '{{ route("admin.updateUser", ":userId") }}';
+                url = url.replace(':userId', userId);
+                $('#submitModalForm').attr('action', url);
+            } else{
+                $("#id_user").val('');
+                $('#submitModalForm').attr('action', `{{route('admin.createUser')}}`);
+            }
+            $("#create-or-edit-modal").modal('show')
+        }
+    </script>
+@endpush

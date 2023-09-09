@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\CreateUserRequest;
+use App\Http\Requests\admin\UpdateUserRequest;
 use App\Repositories\UserServiceRepositoryInterface;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     private UserServiceRepositoryInterface $repo;
+
     const USER_VIEW_PAGE_TITLE = "List Of Users";
 
     public function __construct(UserServiceRepositoryInterface $repo){
@@ -26,23 +29,29 @@ class UserController extends Controller
         }
     }
 
-    public function createUser(Request $request){
+    public function createUser(CreateUserRequest $request){
         try {
-            $data['users'] = $this->repo->storeUserInfo();
-            return view('admin.user.index', $data);
+            $name = $request->name ?? null;
+            $email = $request->email ?? null;
+            $status = $request->status ?? null;
+            [$statusName, $message] = $this->repo->storeUserInfo($name, $email, $status);
+            return redirect()->route('admin.usersList')->with($statusName, $message);
 
         } catch (\Throwable $th) {
             return $th;
         }
     }
 
-    public function updateUser($userId){
+    public function updateUser(UpdateUserRequest $request, $userId){
         try {
-            $data['users'] = $this->repo->updateUserInfoById($userId);
-            return view('admin.user.index', $data);
+            $name = $request->name ?? null;
+            $email = $request->email ?? null;
+            $status = $request->status ?? null;
+            [$statusName, $message] = $this->repo->updateUserInfoById($userId, $name, $email, $status);
+            return redirect()->route('admin.usersList')->with($statusName, $message);
 
         } catch (\Throwable $th) {
-            return $th;
+            return back()->with(500, $th->getMessage());
         }
     }
 

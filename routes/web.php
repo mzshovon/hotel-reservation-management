@@ -64,8 +64,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::group(['prefix' => 'users'], function() {
         Route::get('/', [UserController::class, 'getUsers'])->name('usersList');
         Route::post('/store', [UserController::class, 'createUser'])->name('createUser');
-        Route::put('/update/{id}', [UserController::class, 'updateUser'])->name('updateUser');
-        Route::delete('/delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+        Route::post('/update/{userId}', [UserController::class, 'updateUser'])->name('updateUser');
+        Route::delete('/delete/{userId}', [UserController::class, 'deleteUser'])->name('deleteUser');
     });
 
     Route::group(['prefix' => 'error'], function() {
