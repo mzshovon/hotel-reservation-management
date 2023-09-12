@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\ActivityLogEvent;
 use App\Http\Controllers\Controller;
+use App\Http\Enums\ModuleEnum;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -36,5 +42,40 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function socialRedirect($socialType)
+    {
+        // dd($socialType);
+        return Socialite::driver($socialType)->redirect();
+    }
+
+    public function callBackSocial($socialType)
+    {
+        try {
+
+            $socialUser = Socialite::driver($socialType)->user();
+
+            $user = User::getSingleUserByParam("social_id", $socialUser->getId());
+
+            if(!$user) {
+
+                $userInfo = [
+                    'name' => $socialUser->getName(),
+                    'email' => $socialUser->getEmail(),
+                    'social_id' => $socialUser->getId(),
+                    'social_type' => $socialType,
+                    'profile_image' => $socialUser->getAvatar(),
+                ];
+                $user = User::createUser($userInfo);
+            }
+
+            Auth::login($user);
+            event(new ActivityLogEvent(ModuleEnum::SocialLogin->value, json_encode($user), "Social Login Successfully", "social-login", $user->id));
+            return redirect()->intended($this->redirectTo);
+
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 }

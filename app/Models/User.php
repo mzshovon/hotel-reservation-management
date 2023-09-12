@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'social_id',
+        'social_type',
+        'profile_image',
     ];
 
     /**
@@ -41,4 +44,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getSingleUserByParam($whereParam, $value)
+    {
+        return self::where($whereParam, $value)->first();
+    }
+
+    public static function createUser(array $userInfo)
+    {
+        return self::create($userInfo);;
+    }
 }

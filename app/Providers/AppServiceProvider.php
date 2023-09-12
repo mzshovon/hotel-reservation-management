@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Http\Services\Hotels\HotelsService;
-use App\Repositories\HotelServiceRepositoryInterface;
+use App\Http\Logger\Repositories\ActivityLoggerInterface;
+use App\Http\Logger\Services\ActivityLoggerService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(ActivityLoggerInterface::class, ActivityLoggerService::class);
     }
 
     /**

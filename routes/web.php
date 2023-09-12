@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\admin\HomeController;
-use App\Http\Controllers\admin\RoomTypesController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\RoomTypesController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
 use App\Http\Controllers\Frontend\UtilityController;
@@ -21,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Social Login
+Route::get('auth/{socialType}/redirect', [LoginController::class, 'socialRedirect'])->name('socialAuth');
+Route::get('auth/{socialType}/callback', [LoginController::class, 'callBackSocial'])->name('socialCallBack');
+// Route::get();
 
 Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");
 Route::get('/contact-us', [UtilityController::class, 'getContactUs'])->name("contactUs");
