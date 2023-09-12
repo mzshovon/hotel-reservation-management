@@ -50,12 +50,14 @@
                             <th scope="row">{{ ++$key }}</th>
                             <td>{{ $user['name'] }}</td>
                             <td>{{ $user['email'] }}</td>
-                            <td>{{ $user['social_type'] ? ucfirst($user['social_type']) : 'Portal' }}</td>
+                            <td>{{ isset($user['social_type']) && $user['social_type'] ? ucfirst($user['social_type']) : 'Portal' }}</td>
                             <td>
+                                @if(isset($user['status']))
                                 <span class="badge bg-{{ $user['status'] == 1 ? 'success' : 'warning' }}">
                                     <i class="bi {{ $user['status'] == 1 ? 'bi-check-circle me-1' : 'bi-exclamation-triangle me-1' }}"></i>
                                     {{ $user['status'] == 1 ? 'Active' : 'Inactive' }}
                                 </span>
+                                @endif
                             </td>
                             <td>
                               <div class="d-flex">

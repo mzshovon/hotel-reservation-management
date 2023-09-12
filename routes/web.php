@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
 use App\Http\Controllers\Frontend\UtilityController;
 use App\Http\Controllers\Permission\PermissionsController;
+use App\Http\Controllers\Permission\RolesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,21 +49,31 @@ Auth::routes();
 
 // admin routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
     // Permission routes
     Route::group(['prefix' => 'permissions'], function() {
         Route::get('/', [PermissionsController::class, 'index'])->name('permissionsList');
         Route::post('/store', [PermissionsController::class, 'store'])->name('storePermissions');
     });
 
-    Route::resource('roles', RolesController::class);
-
-    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    // Roles routes
+    Route::group(['prefix' => 'roles'], function() {
+        Route::get('/', [RolesController::class, 'index'])->name('rolesList');
+        Route::get('/create', [RolesController::class, 'create'])->name('createRoles');
+        Route::post('/store', [RolesController::class, 'store'])->name('storeRoles');
+        Route::get('/edit/{id}', [RolesController::class, 'edit'])->name('editRoles');
+        Route::patch('/update/{id}', [RolesController::class, 'update'])->name('updateRoles');
+    });
 
     // Room types routes
-    Route::get('room-types', [RoomTypesController::class, 'index'])->name('room-types.index');
-    Route::get('room-types/create', [RoomTypesController::class, 'create'])->name('room-types.create');
-    Route::post('room-types/store', [RoomTypesController::class, 'store'])->name('room-types.store');
-    Route::get('room-types/{id}/edit', [RoomTypesController::class, 'edit'])->name('room-types.edit');
+    Route::group(['prefix' => 'room-types'], function() {
+        Route::get('/', [RoomTypesController::class, 'index'])->name('roomTypesList');
+        Route::get('/create', [RoomTypesController::class, 'create'])->name('createRoomType');
+        Route::get('/edit/{room_type_id}', [RoomTypesController::class, 'edit'])->name('editRoomType');
+        Route::post('/store', [RoomTypesController::class, 'create'])->name('storeRoomType');
+        Route::delete('/delete/{room_type_id}', [RoomTypesController::class, 'destroy'])->name('deleteRoomType');
+    });
 
     // Activity Log routes
     Route::group(['prefix' => 'activity-log'], function() {

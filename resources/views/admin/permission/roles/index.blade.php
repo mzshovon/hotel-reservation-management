@@ -1,16 +1,17 @@
 @extends('admin.layouts.master')
-@section('content')
+@section('body')
 <main id="main" class="main">
+
     <div class="pagetitle">
-      <h1>Roles</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">Data</li>
-        </ol>
-      </nav>
-    </div>
+        <h1>Data</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Roles</li>
+                <li class="breadcrumb-item active">Data</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
@@ -24,7 +25,7 @@
                     </div>
                     <div class="col-2">
                         <h5 class="card-title">
-                            <a href="{{ route('roles.create') }}" class="btn btn-success btn-sm">Add new</a>
+                            <a href="{{ route('admin.createRoles') }}" class="btn btn-success btn-sm">Add new</a>
                         </h5>
                     </div>
                 </div>
@@ -45,7 +46,7 @@
                         <td>{{ $role->name }}</td>
                         <td>
                             <div class="d-flex">
-                                <a href="{{ route('roles.edit',$role->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                <a href="{{ route('admin.editRoles',$role->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></a>
                             </div>
                         </td>
                     </tr>

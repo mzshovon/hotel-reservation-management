@@ -1,16 +1,17 @@
 @extends('admin.layouts.master')
-@section('content')
+@section('body')
 <main id="main" class="main">
+
     <div class="pagetitle">
-      <h1>Roles</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Roles</li>
-          <li class="breadcrumb-item active">Create</li>
-        </ol>
-      </nav>
-    </div>
+        <h1>Data</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Roles</li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
     <section class="section">
       <div class="row">
@@ -20,16 +21,16 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-10">
-                        <h5 class="card-title">New role create from here with permission.</h5>
+                        <h5 class="card-title">Edit role from here with permission.</h5>
                     </div>
                     <div class="col-2">
                         <h5 class="card-title">
-                            <a href="{{ route('roles.index') }}" class="btn btn-success btn-sm">Back</a>
+                            <a href="{{ route('admin.rolesList') }}" class="btn btn-success btn-sm">Back</a>
                         </h5>
                     </div>
                 </div>
                 <div class="basic-form">
-                    <form method="POST" action="{{ route('roles.update', $role->id) }}">
+                    <form method="POST" action="{{ route('admin.updateRoles', $role->id) }}">
                         @method('patch')
                         @csrf
                         <div class="form-row">
@@ -74,7 +75,7 @@
   </main>
 @endsection
 
-@push('scripts')
+@push('script')
 <script>
     $(document).ready(function() {
         $('[name="all_permission"]').on('click', function() {
