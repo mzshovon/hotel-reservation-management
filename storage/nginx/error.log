@@ -8009,3 +8009,21 @@
 2023/09/06 17:02:15 [notice] 1#1: start worker process 41
 2023/09/06 17:02:15 [notice] 1#1: start worker process 42
 2023/09/06 17:02:15 [notice] 1#1: start worker process 43
+2023/09/08 00:55:19 [notice] 1#1: using the "epoll" event method
+2023/09/08 00:55:19 [notice] 1#1: nginx/1.21.3
+2023/09/08 00:55:19 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/09/08 00:55:19 [notice] 1#1: OS: Linux 5.15.0-67-generic
+2023/09/08 00:55:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/09/08 00:55:19 [notice] 1#1: start worker processes
+2023/09/08 00:55:19 [notice] 1#1: start worker process 24
+2023/09/08 00:55:19 [notice] 1#1: start worker process 25
+2023/09/08 00:55:19 [notice] 1#1: start worker process 26
+2023/09/08 00:55:19 [notice] 1#1: start worker process 27
+2023/09/08 00:55:19 [notice] 1#1: start worker process 28
+2023/09/08 00:55:19 [notice] 1#1: start worker process 29
+2023/09/08 00:55:19 [notice] 1#1: start worker process 30
+2023/09/08 00:55:19 [notice] 1#1: start worker process 31
+2023/09/08 00:55:19 [notice] 1#1: start worker process 32
+2023/09/08 00:55:19 [notice] 1#1: start worker process 33
+2023/09/08 00:55:19 [notice] 1#1: start worker process 34
+2023/09/08 00:55:19 [notice] 1#1: start worker process 35
