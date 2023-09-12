@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Frontend\HotelController;
 use App\Http\Controllers\Frontend\LandingPageController;
 use App\Http\Controllers\Frontend\UtilityController;
+use App\Http\Controllers\Permission\PermissionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,14 @@ Auth::routes();
 
 // admin routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
+    // Permission routes
+    Route::group(['prefix' => 'permissions'], function() {
+        Route::get('/', [PermissionsController::class, 'index'])->name('permissionsList');
+        Route::post('/store', [PermissionsController::class, 'store'])->name('storePermissions');
+    });
+
+    Route::resource('roles', RolesController::class);
+
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     // Room types routes

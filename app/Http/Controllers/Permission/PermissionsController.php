@@ -12,7 +12,7 @@ class PermissionsController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('permission.permissions.index', [
+        return view('admin.permission.permissions.index', [
             'permissions' => $permissions
         ]);
     }
@@ -30,6 +30,6 @@ class PermissionsController extends Controller
             Permission::create($request->only('name'));
         }
 
-        return redirect()->route('permissions.index')->with('success','Permission created successfully.');
+        return redirect()->route('admin.permissionsList')->with('success','Permission created successfully.');
     }
 }
