@@ -12,8 +12,8 @@ class PermissionSeeder extends Seeder
         $routes = [
             'logout.perform','admin.dashboard','admin.assignRoleToUser','admin.permissionsList','admin.storePermissions',
             'admin.rolesList','admin.createRoles','admin.storeRoles','admin.editRoles','admin.updateRoles',
-            'users.index','users.create','users.store','users.edit',
-            'status.index','status.store','tasks.index','tasks.create','tasks.store','tasks.edit','tasks.destroy',
+            'admin.activityLogs','admin.usersList','admin.createUser','admin.updateUser','admin.deleteUser',
+            'admin.roomTypesList','admin.createRoomType','admin.editRoomType','admin.storeRoomType','admin.deleteRoomType'
         ];
 
         foreach ($routes as $route) {

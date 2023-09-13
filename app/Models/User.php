@@ -84,4 +84,12 @@ class User extends Authenticatable
     {
         return self::where($whereParam, $value)->update($updatedInfo);
     }
+
+    public function scopeUserRole($query, $userId) {
+        $query->join('model_has_roles', 'model_has_roles.model_id', '=', 'users.id')
+        ->join('roles', 'model_has_roles.role_id', '=', 'roles.id')
+        ->where('model_has_roles.model_id', $userId)
+        ->select('roles.id as role_id', 'roles.name as role', 'model_has_roles.role_id', 'model_has_roles.model_id as user_id');
+        return $query->first();
+    }
 }

@@ -14,25 +14,21 @@ class UserSeeder extends Seeder
             0 => [
                 'name' => 'Super admin',
                 'email' => 'admin.super@gmail.com',
-                'username' => 'admin.super@gmail.com',
                 'password' => Hash::make('password'), // it will automatically bcrypted as we set it in User model
             ],
             1 => [
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
-                'username' => 'admin@gmail.com',
                 'password' => Hash::make('password'), // it will automatically bcrypted as we set it in User model
             ],
             2 => [
                 'name' => 'moderator',
                 'email' => 'moderator@gmail.com',
-                'username' => 'moderator@gmail.com',
                 'password' => Hash::make('password'), // it will automatically bcrypted as we set it in User model
             ],
             3 => [
                 'name' => 'user',
                 'email' => 'user@gmail.com',
-                'username' => 'user@gmail.com',
                 'password' => Hash::make('password'), // it will automatically bcrypted as we set it in User model
             ],
         ];

@@ -48,7 +48,7 @@ Route::get('/rooms/{roomId}', [HotelController::class, 'getSingleRoomInfo'])->na
 Auth::routes();
 
 // admin routes
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'permission']], function() {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     // Permission routes
@@ -80,12 +80,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         Route::get('/', [AdminUtilityController::class, 'getActivityLogs'])->name('activityLogs');
     });
 
-    // Activity Log routes
+    // User routes
     Route::group(['prefix' => 'users'], function() {
         Route::get('/', [UserController::class, 'getUsers'])->name('usersList');
         Route::post('/store', [UserController::class, 'createUser'])->name('createUser');
         Route::post('/update/{userId}', [UserController::class, 'updateUser'])->name('updateUser');
         Route::delete('/delete/{userId}', [UserController::class, 'deleteUser'])->name('deleteUser');
+        // Role assign to user
+        Route::post('/assign-role', [UserController::class, 'assignRoleToUser'])->name('assignRoleToUser');
     });
 
     Route::group(['prefix' => 'error'], function() {

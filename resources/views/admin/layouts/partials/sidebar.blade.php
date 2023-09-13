@@ -53,17 +53,17 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link @if (in_array($route, ['admin.room-types.index','admin.rolesList','admin.editRoles','admin.createRoles','admin.permissionsList'])) nav-item-active-a @else collapsed @endif"
+            <a class="nav-link @if (in_array($route, ['admin.roomTypesList','admin.rolesList','admin.editRoles','admin.createRoles','admin.permissionsList'])) nav-item-active-a @else collapsed @endif"
                 data-bs-target="#configurations-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>Configurations</span><i
                     class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="configurations-nav" class="nav-content collapse @if (in_array($route, ['admin.room-types.index','admin.rolesList','admin.editRoles','admin.createRoles','admin.permissionsList'])) show @endif"
+            <ul id="configurations-nav" class="nav-content collapse @if (in_array($route, ['admin.roomTypesList','admin.rolesList','admin.editRoles','admin.createRoles','admin.permissionsList'])) show @endif"
                 data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{{ route('admin.room-types.index') }}">
-                        <i class="bi bi-circle @if (in_array($route, ['admin.room-types.index'])) ul-item-li-a-i @endif"></i><span
-                            @if (in_array($route, ['admin.room-types.index'])) class="ul-item-li-a-span" @endif>Room Types</span>
+                    <a href="{{ route('admin.roomTypesList') }}">
+                        <i class="bi bi-circle @if (in_array($route, ['admin.roomTypesList'])) ul-item-li-a-i @endif"></i><span
+                            @if (in_array($route, ['admin.roomTypesList'])) class="ul-item-li-a-span" @endif>Room Types</span>
                     </a>
                 </li>
                 <li>
