@@ -13,7 +13,13 @@ class VisitorManageFromCache {
 
     }
 
-    public function storeVisitorInfo($ip, $featureName) : void
+    /**
+     * @param string $ip
+     * @param string $featureName
+     *
+     * @return void
+     */
+    public function storeVisitorInfo(string $ip, string $featureName) : void
     {
         if(Cache::has(self::VISITOR_ROOT_SCHEMA_NAME)) {
             $this->checkVisitorInfo($ip, $featureName);
@@ -22,7 +28,13 @@ class VisitorManageFromCache {
         }
     }
 
-    private function checkVisitorInfo($ip, $featureName)
+    /**
+     * @param string $ip
+     * @param string $featureName
+     *
+     * @return mixed
+     */
+    private function checkVisitorInfo(string $ip, string $featureName)
     {
         $getRootSchema = Cache::get(self::VISITOR_ROOT_SCHEMA_NAME);
         return $this->filterAndAddOrUpdateSchema($this->parseRootSchema($getRootSchema), $ip, $featureName);
