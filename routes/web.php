@@ -30,20 +30,33 @@ Route::get('/', function () {
 //Social Login
 Route::get('auth/{socialType}/redirect', [LoginController::class, 'socialRedirect'])->name('socialAuth');
 Route::get('auth/{socialType}/callback', [LoginController::class, 'callBackSocial'])->name('socialCallBack');
-// Route::get();
 
-Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage");
-Route::get('/contact-us', [UtilityController::class, 'getContactUs'])->name("contactUs");
-Route::post('/contact-us', [UtilityController::class, 'storeContactUs'])->name("storeContactUs");
-Route::get('/about-us', [UtilityController::class, 'getAboutUs'])->name("aboutUs");
-Route::get('/news', [UtilityController::class, 'getNews'])->name("news");
-Route::get('/news/{id}', [UtilityController::class, 'getSingleNews'])->name("singleNews");
+Route::get('/', [LandingPageController::class, 'viewLandingPage'])->name("landingPage")->middleware('visitors:home');
+Route::get('/about-us', [UtilityController::class, 'getAboutUs'])->name("aboutUs")->middleware('visitors:about-us');
+
+//Contact Us
+Route::group(['prefix' => 'contact-us', 'middleware' => 'visitors:contact-us'], function() {
+    Route::get('/', [UtilityController::class, 'getContactUs'])->name("contactUs");
+    Route::post('/', [UtilityController::class, 'storeContactUs'])->name("storeContactUs");
+});
+
+//News
+Route::group(['prefix' => 'news', 'middleware' => 'visitors:news'], function() {
+    Route::get('/', [UtilityController::class, 'getNews'])->name("news");
+    Route::get('/{id}', [UtilityController::class, 'getSingleNews'])->name("singleNews");
+});
 
 //Hotel
-Route::get('/hotels', [HotelController::class, 'getHotels'])->name("hotels");
-Route::get('/hotels/{hotelId}', [HotelController::class, 'getSingleHotelInfo'])->name("singleHotelInfo");
-Route::get('/rooms', [HotelController::class, 'getRooms'])->name("rooms");
-Route::get('/rooms/{roomId}', [HotelController::class, 'getSingleRoomInfo'])->name("singleRoomInfo");
+Route::group(['prefix' => 'hotels', 'middleware' => 'visitors:hotels'], function() {
+    Route::get('/', [HotelController::class, 'getHotels'])->name("hotels");
+    Route::get('/{hotelId}', [HotelController::class, 'getSingleHotelInfo'])->name("singleHotelInfo");
+});
+
+//Rooms
+Route::group(['prefix' => 'rooms', 'middleware' => 'visitors:rooms'], function() {
+    Route::get('/', [HotelController::class, 'getRooms'])->name("rooms");
+    Route::get('/{roomId}', [HotelController::class, 'getSingleRoomInfo'])->name("singleRoomInfo");
+});
 
 Auth::routes();
 
