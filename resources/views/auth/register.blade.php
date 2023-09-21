@@ -31,21 +31,30 @@
                                             <label for="yourName" class="form-label">Your Name</label>
                                             <input type="text" name="name" class="form-control" id="yourName"
                                                 required>
-                                            <div class="invalid-feedback">Please, enter your name!</div>
+                                            @if ($errors->has('name'))
+                                                {{--  <div class="invalid-feedback" style="display: inline-block">Please, enter your name!</div>  --}}
+                                                <div class="invalid-feedback" style="display: inline-block">{{ $errors->first('name') }}</div>
+                                            @endif
                                         </div>
 
                                         <div class="col-12">
                                             <label for="yourEmail" class="form-label">Your Email</label>
                                             <input type="email" name="email" class="form-control" id="yourEmail"
                                                 required>
-                                            <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                            @if ($errors->has('email'))
+                                                {{--  <div class="invalid-feedback" style="display: inline-block">Please enter a valid Email adddress!</div>  --}}
+                                                <div class="invalid-feedback" style="display: inline-block">{{ $errors->first('email') }}</div>
+                                            @endif
                                         </div>
 
                                         <div class="col-12">
                                             <label for="yourPassword" class="form-label">Password</label>
                                             <input type="password" name="password" class="form-control"
                                                 id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            @if ($errors->has('password'))
+                                                {{--  <div class="invalid-feedback" style="display: inline-block">Please enter your password!</div>  --}}
+                                                <div class="invalid-feedback" style="display: inline-block">{{ $errors->first('password') }}</div>
+                                            @endif
                                         </div>
 
                                         <div class="col-12">
@@ -53,7 +62,10 @@
                                                 Confirmation</label>
                                             <input type="password" name="password_confirmation" class="form-control"
                                                 id="confirmYourPassword" required>
-                                            <div class="invalid-feedback">Please confirm your password!</div>
+                                            @if ($errors->has('password_confirmation'))
+                                                {{--  <div class="invalid-feedback" style="display: inline-block">Please confirm your password!</div>  --}}
+                                                <div class="invalid-feedback" style="display: inline-block">{{ $errors->first('password_confirmation') }}</div>
+                                            @endif
                                         </div>
 
                                         <div class="col-12">
@@ -79,7 +91,7 @@
                             </div>
 
                             <div class="credits">
-                                Developed & Designed by <a href="#">US</a>
+                                Developed & Designed by <a href="#">Friends Kingdom</a>
                             </div>
 
                         </div>
