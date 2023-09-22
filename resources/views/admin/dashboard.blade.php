@@ -364,7 +364,7 @@
 
         @include('admin.layouts.partials.recentActivities')
 
-          <!-- Budget Report -->
+          {{-- <!-- Budget Report -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -436,7 +436,7 @@
               </script>
 
             </div>
-          </div><!-- End Budget Report -->
+          </div><!-- End Budget Report --> --}}
 
           <!-- Website Traffic -->
           <div class="card">
@@ -454,65 +454,8 @@
             </div>
 
             <div class="card-body pb-0">
-              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
+              <h5 class="card-title">Website Traffic <span>| Overall</span></h5>
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#trafficChart")).setOption({
-                    tooltip: {
-                      trigger: 'item'
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Access From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
             </div>
           </div><!-- End Website Traffic -->
 
@@ -581,6 +524,9 @@
 @push('script')
 
 <script src="{{ asset('/') }}admin/assets/js/call.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/echarts/echarts.min.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
 
 <script>
     async function readActivityLogs() {
@@ -601,6 +547,7 @@
         // console.log(activityLog);
     }
     readActivityLogs();
+    chartsForVisitors(JSON.parse('{!! $countInfo !!}'));
 </script>
 @endpush
 

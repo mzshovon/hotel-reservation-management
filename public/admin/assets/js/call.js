@@ -9,3 +9,38 @@ async function fetchApiCall(url, headers = [], options = []) {
         console.log(error);
     }
 };
+
+function chartsForVisitors(data) {
+    document.addEventListener("DOMContentLoaded", () => {
+        echarts.init(document.querySelector("#trafficChart")).setOption({
+          tooltip: {
+            trigger: 'item'
+          },
+          legend: {
+            top: '2%',
+            left: 'center'
+          },
+          series: [{
+            name: 'Visitor From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: '18',
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: data
+          }]
+        });
+      });
+}

@@ -91,9 +91,15 @@ class VisitorManageFromCache {
         if(Cache::has(self::VISITOR_ROOT_SCHEMA_NAME)) {
             $visitorsSchema = json_decode(Cache::get(self::VISITOR_ROOT_SCHEMA_NAME), true);
             $countFormattedArray = [];
-            $countFormattedArray['total'] = $visitorsSchema['total_visitors'];
+            $countFormattedArray[] = [
+                'value' => $visitorsSchema['total_visitors'],
+                'name' => "Total"
+            ];
             foreach (array_column(FeatureEnum::cases(),'value') as $key => $value) {
-                $countFormattedArray[$value] = array_sum(array_column($visitorsSchema[self::VISITORS_INDEX_NAME], $value)) ?? 0;
+                $countFormattedArray[] = [
+                    'value' => array_sum(array_column($visitorsSchema[self::VISITORS_INDEX_NAME], $value)) ?? 0,
+                    'name' => $value,
+                ];
             }
             return $countFormattedArray;
         }

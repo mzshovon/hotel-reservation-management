@@ -16,6 +16,6 @@ class HomeRepository implements HomeRepositoryInterface
     public function getDashboardData()
     {
         $countInfo = $this->visitorManageFromCache->getVisitorInfo();
-        return ["Dashboard", $countInfo];
+        return ["Dashboard", json_encode($countInfo)];
     }
 }
