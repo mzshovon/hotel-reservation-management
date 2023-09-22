@@ -1,7 +1,7 @@
-async function fetchApiCall(url, headers = [], options = []) {
+async function fetchApiCall(url, method, headers = [], options = []) {
     try {
         let res = await fetch(url, {
-            method : "GET",
+            method : method,
             headers : headers
         });
         return await res.json();
@@ -9,6 +9,27 @@ async function fetchApiCall(url, headers = [], options = []) {
         console.log(error);
     }
 };
+
+function fetchCsrfTokenFromForm()
+{
+    return $("input[name=_token]").val();
+}
+
+function flashMessage(message, alert='success', title = 'Deleted!')
+{
+    Swal.fire(
+        title,
+        message,
+        alert
+    )
+}
+
+function pageReloadInGivenPeriod(period='2000')
+{
+    setTimeout(function(){
+        window.location.reload();
+     }, period);
+}
 
 function chartsForVisitors(data) {
     document.addEventListener("DOMContentLoaded", () => {

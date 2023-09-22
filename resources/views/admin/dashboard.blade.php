@@ -530,7 +530,7 @@
 
 <script>
     async function readActivityLogs() {
-        const activityLog = await fetchApiCall("{{route('admin.activityLogs')}}");
+        const activityLog = await fetchApiCall("{{route('admin.activityLogs')}}", "GET");
         let activityLogSection = $('.activity');
         let updateLogDiv = "";
         activityLogSection.html('');
