@@ -15,7 +15,7 @@ class HomeController extends Controller
         $this->repo = $repo;
     }
     public function dashboard(){
-        [$data['title'], $data['countInfo']] = $this->repo->getDashboardData();
+        [$data['title'], $data['countInfo'], $data['allNews']] = $this->repo->getDashboardData();
         return view('admin.dashboard', $data);
     }
 }
