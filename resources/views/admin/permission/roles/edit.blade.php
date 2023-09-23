@@ -39,7 +39,7 @@
 
                             <h5 class="mb-3">Edit assigned permission to this role</h5>
 
-                                <table class="table datatable">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th style="padding-left: 10px;"><input type="checkbox" name="all_permission"></th>

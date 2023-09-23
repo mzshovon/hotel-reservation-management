@@ -8232,3 +8232,25 @@
 2023/09/20 16:24:20 [notice] 1#1: start worker process 46
 2023/09/20 16:24:20 [notice] 1#1: start worker process 47
 2023/09/20 16:52:35 [error] 32#32: *50 directory index of "/app/public/admin/" is forbidden, client: 172.20.0.1, server: _, request: "GET /admin/ HTTP/1.1", host: "127.0.0.1:9090"
+2023/09/23 17:07:24 [notice] 1#1: using the "epoll" event method
+2023/09/23 17:07:24 [notice] 1#1: nginx/1.21.3
+2023/09/23 17:07:24 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2023/09/23 17:07:24 [notice] 1#1: OS: Linux 5.10.102.1-microsoft-standard-WSL2
+2023/09/23 17:07:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/09/23 17:07:24 [notice] 1#1: start worker processes
+2023/09/23 17:07:24 [notice] 1#1: start worker process 32
+2023/09/23 17:07:24 [notice] 1#1: start worker process 33
+2023/09/23 17:07:24 [notice] 1#1: start worker process 34
+2023/09/23 17:07:24 [notice] 1#1: start worker process 35
+2023/09/23 17:07:24 [notice] 1#1: start worker process 36
+2023/09/23 17:07:24 [notice] 1#1: start worker process 37
+2023/09/23 17:07:24 [notice] 1#1: start worker process 38
+2023/09/23 17:07:24 [notice] 1#1: start worker process 39
+2023/09/23 17:07:24 [notice] 1#1: start worker process 40
+2023/09/23 17:07:24 [notice] 1#1: start worker process 41
+2023/09/23 17:07:24 [notice] 1#1: start worker process 42
+2023/09/23 17:07:24 [notice] 1#1: start worker process 43
+2023/09/23 17:07:24 [notice] 1#1: start worker process 44
+2023/09/23 17:07:24 [notice] 1#1: start worker process 45
+2023/09/23 17:07:24 [notice] 1#1: start worker process 46
+2023/09/23 17:07:24 [notice] 1#1: start worker process 47
