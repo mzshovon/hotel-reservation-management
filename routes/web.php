@@ -82,9 +82,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'p
     // Room types routes
     Route::group(['prefix' => 'room-types'], function() {
         Route::get('/', [RoomTypesController::class, 'index'])->name('roomTypesList');
-        Route::get('/create', [RoomTypesController::class, 'create'])->name('createRoomType');
+        Route::post('/create', [RoomTypesController::class, 'create'])->name('createRoomType');
         Route::get('/edit/{room_type_id}', [RoomTypesController::class, 'edit'])->name('editRoomType');
-        Route::post('/store', [RoomTypesController::class, 'create'])->name('storeRoomType');
+        Route::post('/store', [RoomTypesController::class, 'store'])->name('storeRoomType');
         Route::delete('/delete/{room_type_id}', [RoomTypesController::class, 'destroy'])->name('deleteRoomType');
     });
 

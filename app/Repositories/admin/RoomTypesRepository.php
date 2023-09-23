@@ -45,7 +45,7 @@ class RoomTypesRepository
             $type->description = $request->description;
             $type->status = $request->status;
             $type->save();
-            return redirect()->route('admin.room-types.index')->with('success', 'Successfully saved');
+            return redirect()->route('admin.roomTypesList')->with('success', 'Successfully saved');
 
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());

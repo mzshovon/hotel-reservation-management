@@ -71,7 +71,7 @@
         <div class="modal fade" id="create-or-edit-modal" tabindex="-1" data-bs-backdrop="false">
           <div class="modal-dialog">
               <div class="modal-content">
-                  <form action="{{ route('admin.createRoomType') }}" method="POST">
+                  <form action="{{ route('admin.storeRoomType') }}" method="POST">
                       @csrf
                       <div class="modal-header">
                           <h5 class="modal-title">Create/Edit room type</h5>
