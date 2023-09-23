@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminUtilityController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RoomTypesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -101,6 +102,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'p
         Route::delete('/delete/{userId}', [UserController::class, 'deleteUser'])->name('deleteUser');
         // Role assign to user
         Route::post('/assign-role', [UserController::class, 'assignRoleToUser'])->name('assignRoleToUser');
+    });
+
+    // Profile routes
+    Route::group(['prefix' => 'profle'], function() {
+        Route::get('/', [ProfileController::class, 'getProfile'])->name('userProfile');
     });
 
     Route::group(['prefix' => 'error'], function() {

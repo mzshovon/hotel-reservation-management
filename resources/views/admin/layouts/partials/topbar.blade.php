@@ -49,7 +49,7 @@
               </li>
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <a class="dropdown-item d-flex align-items-center" href="{{route('admin.userProfile')}}">
                   <i class="bi bi-person"></i>
                   <span>My Profile</span>
                 </a>
