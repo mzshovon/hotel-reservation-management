@@ -87,6 +87,9 @@
                                                         onclick="createEditModalShow(`{{ $user['name'] }}`, `{{ $user['email'] }}`, `{{ $user['status'] }}`, `{{ $user['id'] }}`)"
                                                         class="btn btn-primary btn-sm"><i
                                                             class="bi bi-pencil-square"></i></a>
+                                                    <a onclick="deleteUser(`{{ route('admin.deleteUser', ['userId' => $user['id']])}}`)"
+                                                        class="btn btn-danger btn-sm"><i
+                                                            class="bi bi-trash-fill"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -152,7 +155,7 @@
                                         class="form-control" required>
                                         <option value="">Select a Role</option>
                                         @foreach ($roles as $role)
-                                            <option id="option_id{{ $role->id }}" value="{{ $role->id }}">
+                                            <option id="role_option_id{{ $role->id }}" value="{{ $role->id }}">
                                                 {{ $role->name }}</option>
                                         @endforeach
                                     </select>
@@ -176,6 +179,8 @@
 @endsection
 
 @push('script')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('/') }}admin/assets/js/call.js"></script>
     <script>
         function createEditModalShow(name, email, status, userId) {
             if (name) {
@@ -206,17 +211,52 @@
         }
 
         function assignRoleModalShow(userId, roleId) {
-            alert(roleId)
             if(userId == "" || userId == null){
                 return false
             }
             $("#id_user_id").val(userId);
+            console.log(roleId);
             if (roleId) {
-                $("#option_id" + roleId).prop('selected', true);
+                $("#role_option_id" + roleId).prop('selected', true);
             } else {
                 $('#id_role_id').find($('option')).prop('selected', false);
             }
             $("#role-assign-modal").modal('show')
+        }
+
+        function deleteUser(url){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    let _token = fetchCsrfTokenFromForm();
+                    fetch(url, {
+                        method : 'DELETE',
+                        headers: {
+                            'X-CSRF-Token' : _token,
+                            'Content-Type':'application/json'
+                        },
+                    }).then(response => response.json())
+                    .then((data) => {
+                        if(data.statusCode == 200){
+                            flashMessage(data.data.message);
+                            pageReloadInGivenPeriod();
+                        }
+                        else {
+                            flashMessage(data.data.message, 'error', data.status);
+                        }
+                    }).catch(error => {
+                        console.log(error);
+                    });
+                    // console.log(res);
+                }
+            })
         }
     </script>
 @endpush

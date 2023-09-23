@@ -64,7 +64,17 @@ class UserService implements UserServiceRepositoryInterface {
 
     public function deleteUserById(int $userId)
     {
+        try {
+            $deleteUserParam = 'id';
+            $userInfo = $this->user::getSingleUserByParam($deleteUserParam, $userId);
+            if($this->user::deleteUserByParam($deleteUserParam, $userId)) {
+                event(new ActivityLogEvent(ModuleEnum::UserDelete->value, "Delete user by $userId with param $deleteUserParam", "User named $userInfo->name deleted", "user-delete"));
+                return ["success", "User Deleted Sucessfully!"];
+            }
 
+        } catch (QueryException | Exception $e) {
+            return ["error", "Something Went Wrong. Error: ".$e->getMessage()];
+        }
     }
 
 }

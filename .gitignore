@@ -20,3 +20,4 @@ yarn-error.log
 /docker-compose.yml
 db-data
 redis-data
+data/redis/*

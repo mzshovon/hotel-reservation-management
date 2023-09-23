@@ -12,6 +12,7 @@ enum ModuleEnum: int {
     case PaymentCreate = 5;
     case UserCreate = 6;
     case UserUpdate = 7;
-    case PreferenceCreate = 8;
-    case PreferenceUpdate = 9;
+    case UserDelete = 8;
+    // case PreferenceCreate = 8;
+    // case PreferenceUpdate = 9;
 }

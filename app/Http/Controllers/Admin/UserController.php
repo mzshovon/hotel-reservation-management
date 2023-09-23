@@ -7,12 +7,15 @@ use App\Http\Requests\admin\CreateUserRequest;
 use App\Http\Requests\admin\UpdateUserRequest;
 use App\Models\User;
 use App\Repositories\UserServiceRepositoryInterface;
+use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    use ApiResponser;
+
     private UserServiceRepositoryInterface $repo;
 
     const USER_VIEW_PAGE_TITLE = "List Of Users";
@@ -61,11 +64,12 @@ class UserController extends Controller
 
     public function deleteUser($userId){
         try {
-            $data['users'] = $this->repo->deleteUserById($userId);
-            return view('admin.user.index', $data);
+            $data = [];
+            [$data['statusName'], $data['message']] = $this->repo->deleteUserById($userId);
+            return $this->success($data);
 
-        } catch (\Throwable $th) {
-            return $th;
+        } catch (\Exception $e) {
+            return $this->error("Something went wrong with error ".$e, null, $e->getCode());
         }
     }
 

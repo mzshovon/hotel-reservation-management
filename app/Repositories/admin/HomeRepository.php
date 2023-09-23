@@ -2,26 +2,22 @@
 
 namespace App\Repositories\admin;
 
-class HomeRepository
+use App\Http\CacheOps\VisitorManageFromCache;
+use App\Http\Services\Utilities\UtilitiesService;
+use App\Repositories\HomeRepositoryInterface;
+
+class HomeRepository implements HomeRepositoryInterface
 {
-    private $moduleName;
-    private $data;
 
-    public function __construct()
+    public function __construct(private VisitorManageFromCache $visitorManageFromCache, private UtilitiesService $utilitiesService)
     {
-        $this->moduleName = 'admin.';
+
     }
 
-    public function layout($pageName)
+    public function getDashboardData()
     {
-        echo view($this->moduleName.$pageName.'', $this->data);
-    }
-
-    public function dashboard()
-    {
-        $this->data = [
-            'title'         => 'Admin Dashboard'
-        ];
-        $this->layout('dashboard');
+        $countInfo = $this->visitorManageFromCache->getVisitorInfo();
+        $news = array_slice($this->utilitiesService->getNews(), 0, 5);
+        return ["Dashboard", json_encode($countInfo), $news];
     }
 }

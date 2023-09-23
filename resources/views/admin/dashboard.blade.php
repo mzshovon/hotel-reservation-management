@@ -3,11 +3,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>{{$title}}</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">{{$title}}</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -364,7 +364,7 @@
 
         @include('admin.layouts.partials.recentActivities')
 
-          <!-- Budget Report -->
+          {{-- <!-- Budget Report -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -436,7 +436,7 @@
               </script>
 
             </div>
-          </div><!-- End Budget Report -->
+          </div><!-- End Budget Report --> --}}
 
           <!-- Website Traffic -->
           <div class="card">
@@ -454,65 +454,8 @@
             </div>
 
             <div class="card-body pb-0">
-              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
+              <h5 class="card-title">Website Traffic <span>| Overall</span></h5>
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#trafficChart")).setOption({
-                    tooltip: {
-                      trigger: 'item'
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Access From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
             </div>
           </div><!-- End Website Traffic -->
 
@@ -532,39 +475,17 @@
             </div>
 
             <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
+              <h5 class="card-title">News &amp; Updates <span>| Latest</span></h5>
               <div class="news">
-                <div class="post-item clearfix">
-                  <img src="{{ asset('/') }}admin/assets/img/news-1.jpg" alt="">
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{ asset('/') }}admin/assets/img/news-2.jpg" alt="">
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{ asset('/') }}admin/assets/img/news-3.jpg" alt="">
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{ asset('/') }}admin/assets/img/news-4.jpg" alt="">
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{ asset('/') }}admin/assets/img/news-5.jpg" alt="">
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-                </div>
-
+                @forelse ($allNews as $news)
+                    <div class="post-item clearfix">
+                        <img src="{{ asset('/') }}admin/assets/img/news-1.jpg" alt="">
+                        <h4><a href="#">{{$news['title']}}</a></h4>
+                        <p>{{$news['description']}}</p>
+                    </div>
+                @empty
+                    No News Available!
+                @endforelse
               </div><!-- End sidebar recent posts-->
 
             </div>
@@ -581,10 +502,13 @@
 @push('script')
 
 <script src="{{ asset('/') }}admin/assets/js/call.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/echarts/echarts.min.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
 
 <script>
     async function readActivityLogs() {
-        const activityLog = await fetchApiCall("{{route('admin.activityLogs')}}");
+        const activityLog = await fetchApiCall("{{route('admin.activityLogs')}}", "GET");
         let activityLogSection = $('.activity');
         let updateLogDiv = "";
         activityLogSection.html('');
@@ -601,6 +525,7 @@
         // console.log(activityLog);
     }
     readActivityLogs();
+    chartsForVisitors(JSON.parse('{!! $countInfo !!}'));
 </script>
 @endpush
 
