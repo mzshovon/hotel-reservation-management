@@ -129,7 +129,7 @@
                 <!-- Section Heading -->
                 <div class="section-heading wow fadeInUp" data-wow-delay="100ms">
                     <h6>About Us</h6>
-                    <h2>Welcome to <br>Roberto Hotel Luxury</h2>
+                    <h2>Welcome to <br>Le Reviria</h2>
                 </div>
                 <div class="about-us-content mb-100">
                     <h5 class="wow fadeInUp" data-wow-delay="300ms">With over 340 hotels worldwide, NH Hotel Group offers a wide variety of hotels catering for a perfect stay no matter where your destination.</h5>
