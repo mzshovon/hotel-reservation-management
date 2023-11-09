@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminUtilityController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\RoomsController;
 use App\Http\Controllers\Admin\RoomTypesController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -86,6 +87,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'p
         Route::get('/edit/{room_type_id}', [RoomTypesController::class, 'edit'])->name('editRoomType');
         Route::post('/store', [RoomTypesController::class, 'create'])->name('storeRoomType');
         Route::delete('/delete/{room_type_id}', [RoomTypesController::class, 'destroy'])->name('deleteRoomType');
+    });
+
+    // Room routes
+    Route::group(['prefix' => 'rooms'], function() {
+        Route::get('/', [RoomsController::class, 'index'])->name('rooms.index');
+        Route::get('/create', [RoomsController::class, 'create'])->name('rooms.create');
+        Route::get('/edit/{room_type_id}', [RoomsController::class, 'edit'])->name('editRoomType');
+        Route::post('/store', [RoomsController::class, 'create'])->name('storeRoomType');
+        Route::delete('/delete/{room_type_id}', [RoomsController::class, 'destroy'])->name('deleteRoomType');
     });
 
     // Activity Log routes
