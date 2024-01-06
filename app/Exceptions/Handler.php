@@ -47,4 +47,13 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+{
+    if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+        return redirect()->route('admin.not-found');
+    }
+
+    return parent::render($request, $exception);
+}
 }

@@ -7,14 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Hotel - Reservation &amp; System</title>
-    <link rel="icon" href="img/core-img/favicon.png">
-    <link rel="stylesheet" href="{{asset('style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/classy-nav.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="icon" href="img/favicon.png">
+    <!-- **** All CSS Files ***** -->
+    @include('frontend.layouts.partials.css')
 </head>
 
 <body>
@@ -32,11 +27,7 @@
 @include('frontend.layouts.footer')
 
 <!-- **** All JS Files ***** -->
-<script src="{{asset('js/jquery.min.js')}}"></script>
-<script src="{{asset("js/popper.min.js")}}"></script>
-<script src="{{asset("js/bootstrap.min.js")}}"></script>
-<script src="{{asset("js/roberto.bundle.js")}}"></script>
-<script src="{{asset("js/active.js")}}"></script>
+@include('frontend.layouts.partials.js')
 
 </body>
 </html>

@@ -8,7 +8,7 @@
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget mb-80">
                             <!-- Footer Logo -->
-                            <a href="#" class="footer-logo"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="#" class="footer-logo"><img src="img/logo2.png" alt=""></a>
 
                             <h4>+12 345-678-9999</h4>
                             <span>Info.colorlib@gmail.com</span>
@@ -78,7 +78,7 @@
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Team</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
